@@ -4,175 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keystone Backflow Services | West Central Florida</title>
-  <meta name="description" content="Certified backflow testing, repair, maintenance, and compliance reporting across West Central Florida." />
+  <meta name="description" content="Professional backflow testing, repair, maintenance, and compliance reporting in West Central Florida." />
+
   <style>
     :root {
-      --red: #ff2a2a;
-      --orange: #ff9f1a;
-      --dark: #070707;
-      --mid: #121212;
-      --light: #eaeaea;
-      --gray: #9a9a9a;
+      --bg: #0a0a0a;
+      --panel: #111;
+      --line: #1f1f1f;
+      --red: #ff2b2b;
+      --orange: #ff9a1a;
+      --text: #f2f2f2;
+      --muted: #9c9c9c;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--dark);
-      color: var(--light);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* LAYOUT */
-    .wrap { max-width: 1280px; margin: auto; padding: 0 2rem; }
+    .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
 
-    /* HEADER */
-    header {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+    /* TOP BAR */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
       align-items: center;
-      background: linear-gradient(180deg, #0c0c0c, #000);
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: auto;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      background: linear-gradient(160deg, transparent 48%, var(--dark) 49%);
+    .topbar img { height: 42px; }
+
+    .topbar .call {
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--orange);
     }
 
-    .hero-left {
-      padding: 6rem 4rem;
+    /* HERO – FULL BLEED STRIPE */
+    .hero {
+      padding: 8rem 0 6rem;
+      background:
+        linear-gradient(90deg, rgba(255,42,42,0.12), rgba(255,154,26,0.05) 60%, transparent),
+        radial-gradient(circle at 80% 20%, rgba(255,154,26,0.15), transparent 60%);
     }
 
-    .hero-left h1 {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      line-height: 1.1;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.05;
       margin-bottom: 1.5rem;
     }
 
-    .hero-left h1 span {
+    .hero h1 span {
       background: linear-gradient(135deg, var(--red), var(--orange));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-left p {
-      color: var(--gray);
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
       max-width: 520px;
       margin-bottom: 2.5rem;
-      font-size: 1.1rem;
     }
 
-    .hero-cta {
-      display: inline-flex;
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
       align-items: center;
-      gap: 1rem;
-      padding: 1rem 2.5rem;
-      background: var(--mid);
-      border-left: 6px solid var(--red);
-      font-weight: 800;
+    }
+
+    .btn-primary {
+      padding: 1rem 2.2rem;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: #000;
+      font-weight: 900;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .hero-cta strong {
-      background: linear-gradient(135deg, var(--red), var(--orange));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .btn-secondary {
+      color: var(--muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.25rem;
     }
 
-    .hero-right {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* HERO VISUAL */
+    .hero-visual {
+      background: linear-gradient(180deg, #111, #090909);
+      border: 1px solid var(--line);
+      padding: 3rem;
     }
 
-    .hero-gauge {
-      max-width: 420px;
-      opacity: 0.9;
-    }
-
-    /* LOGO BAR */
-    .logo-bar {
+    /* TRUST STRIP */
+    .trust {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
       padding: 3rem 0;
-      background: var(--mid);
-      border-top: 1px solid #1c1c1c;
-      border-bottom: 1px solid #1c1c1c;
       text-align: center;
     }
 
-    .logo-bar img { max-width: 420px; margin: auto; }
-
-    /* SERVICES */
-    section { padding: 6rem 0; }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+    .trust p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
     }
 
-    .section-title span {
-      color: var(--orange);
-    }
-
+    /* SERVICES – STACKED */
     .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      padding: 7rem 0;
     }
 
     .service {
-      padding: 2.5rem;
-      background: linear-gradient(180deg, #121212, #0a0a0a);
-      border: 1px solid #1f1f1f;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--line);
     }
+
+    .service:last-child { border-bottom: none; }
 
     .service h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
 
-    .service p { color: var(--gray); }
+    .service span {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--orange);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
 
-    /* COMPLIANCE STRIP */
+    .service p { color: var(--muted); max-width: 620px; }
+
+    /* COMPLIANCE PANEL */
     .compliance {
-      background: linear-gradient(135deg, #0e0e0e, #050505);
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+      background: linear-gradient(135deg, #0d0d0d, #050505);
+      padding: 6rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .compliance-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
       gap: 4rem;
+      align-items: center;
     }
-
-    .compliance img { max-width: 120px; }
 
     /* CONTACT */
     .contact {
+      padding: 7rem 0 5rem;
       text-align: center;
-      padding-bottom: 4rem;
+    }
+
+    .contact h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
     }
 
     .contact .phone {
-      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-size: clamp(2.2rem, 5vw, 3rem);
       font-weight: 900;
-      letter-spacing: 0.08em;
       margin: 2rem 0;
       background: linear-gradient(135deg, var(--red), var(--orange));
       -webkit-background-clip: text;
@@ -182,59 +205,81 @@
     footer {
       padding: 2rem;
       text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
       font-size: 0.9rem;
-      color: var(--gray);
-      border-top: 1px solid #1a1a1a;
     }
 
     @media (max-width: 900px) {
-      header { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 5rem 2rem; }
-      .compliance-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-grid,
+      .service,
+      .compliance-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 6rem; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="hero-left">
-    <h1>Protecting Water.<br><span>Protecting Florida.</span></h1>
-    <p>Keystone Backflow Services provides certified testing, repair, maintenance, and compliance reporting throughout West Central Florida.</p>
-    <a href="#contact" class="hero-cta">Call Now <strong>813‑761‑1314</strong></a>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <img src="/Text transparent-01.png" alt="Keystone Backflow Services" />
+    <div class="call">813‑761‑1314</div>
   </div>
-  <div class="hero-right">
-    <img class="hero-gauge" src="/HQ transparent-06.png" alt="Backflow Gauge Graphic" />
-  </div>
-</header>
-
-<div class="logo-bar">
-  <img src="/Text transparent-01.png" alt="Keystone Backflow Services" />
 </div>
 
-<section class="wrap">
-  <h2 class="section-title">What We <span>Do</span></h2>
-  <div class="services">
-    <div class="service">
-      <h3>Backflow Testing</h3>
-      <p>Certified testing for residential, commercial, and industrial systems—meeting all local and state requirements.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Backflow Compliance,<br><span>Handled Start to Finish</span></h1>
+      <p>Certified testing, repair, and reporting for commercial and residential systems across West Central Florida.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule Service</a>
+        <a href="#services" class="btn-secondary">View Services</a>
+      </div>
     </div>
-    <div class="service">
-      <h3>Repair & Maintenance</h3>
-      <p>On-site repairs and preventative maintenance to keep your assemblies operating reliably.</p>
-    </div>
-    <div class="service">
-      <h3>Compliance Reporting</h3>
-      <p>We submit reports directly to municipalities so you stay compliant without the hassle.</p>
+    <div class="hero-visual">
+      <img src="/HQ transparent-06.png" alt="Backflow Gauge" />
     </div>
   </div>
 </section>
 
+<!-- TRUST -->
+<section class="trust">
+  <div class="container">
+    <p>Trusted by property managers, homeowners, and businesses to keep water systems safe, compliant, and uninterrupted.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="container">
+
+    <div class="service">
+      <h3>Backflow Testing<span>Certified Inspections</span></h3>
+      <p>Annual, initial, and post-repair testing performed by certified technicians in accordance with local and state requirements.</p>
+    </div>
+
+    <div class="service">
+      <h3>Repairs & Maintenance<span>System Reliability</span></h3>
+      <p>Efficient on-site repairs and preventative maintenance to keep your backflow assemblies functioning properly.</p>
+    </div>
+
+    <div class="service">
+      <h3>Compliance Reporting<span>No Paperwork Hassle</span></h3>
+      <p>We submit all required documentation directly to municipalities so you remain compliant without lifting a finger.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
 <section class="compliance">
-  <div class="wrap compliance-grid">
+  <div class="container compliance-grid">
     <div>
-      <h2 class="section-title">Compliance <span>Handled</span></h2>
-      <p class="gray">Avoid fines, failed inspections, and water service interruptions. We make compliance simple and stress‑free.</p>
+      <h2>Protecting Public Water Supplies</h2>
+      <p class="muted">Backflow prevention is critical infrastructure. Our work helps prevent contamination, fines, and service interruptions.</p>
     </div>
     <div>
       <img src="/Needle transparent-01.png" alt="Gauge Needle" />
@@ -242,11 +287,14 @@
   </div>
 </section>
 
-<section id="contact" class="contact wrap">
-  <h2 class="section-title">Schedule <span>Service</span></h2>
-  <p>Fast response. Clear pricing. Professional results.</p>
-  <div class="phone">813‑761‑1314</div>
-  <img src="/HQ transparent-04.png" alt="Keystone Logo" />
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Schedule Service Today</h2>
+    <p>Fast response times. Clear communication. Professional results.</p>
+    <div class="phone">813‑761‑1314</div>
+    <img src="/HQ transparent-04.png" alt="Keystone Backflow Services Logo" />
+  </div>
 </section>
 
 <footer>
