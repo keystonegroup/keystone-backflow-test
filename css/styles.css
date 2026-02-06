@@ -1,1 +1,232 @@
-/* styles included earlier */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap");
+
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  background: #f4f5f6;
+  color: #111;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+h1, h2, h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+p {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  background: linear-gradient(90deg, #000, #111);
+  padding: 1.25rem 0;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-height: 56px;
+}
+
+.phone-cta {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ff3b1f;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  background: radial-gradient(circle at right, #ffffff 0%, #e9ecef 65%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.25rem;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.hero-text p {
+  max-width: 520px;
+  font-size: 1.05rem;
+  margin-bottom: 2.25rem;
+}
+
+/* CTA */
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.4rem;
+  background: linear-gradient(90deg, #ff2a2a 0%, #ff9f00 100%);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(255, 60, 0, 0.35);
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(255, 60, 0, 0.45);
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gauge {
+  width: 100%;
+  max-width: 520px;
+}
+
+.needle {
+  position: absolute;
+  width: 180px;
+  top: 28%;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services {
+  background: #ffffff;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.service-card {
+  background: #f8f9fa;
+  padding: 2.75rem 2.25rem;
+  border-radius: 6px;
+  text-align: center;
+  border-top: 6px solid #ff3b1f;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.service-card img {
+  max-height: 110px;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+}
+
+/* =========================
+   SERVICE AREA
+========================= */
+.service-area {
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  color: #fff;
+  text-align: center;
+}
+
+.service-area p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: linear-gradient(90deg, #000, #111);
+  color: #fff;
+}
+
+.footer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  max-height: 48px;
+}
+
+.footer-info p {
+  font-size: 0.85rem;
+}
+
+.footer-info a {
+  color: #ff9f00;
+  font-weight: 700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .hero-grid,
+  .service-grid,
+  .footer-flex {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+
+  .needle {
+    width: 140px;
+  }
+}
