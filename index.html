@@ -2,32 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keystone Backflow Services | West Central Florida</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <meta name="description" content="Keystone Backflow Services provides certified backflow testing, repairs, maintenance, and compliance reporting across West Central Florida." />
+  <style>
+    :root {
+      --red: #ff2a2a;
+      --orange: #ff9f1a;
+      --dark: #0b0b0b;
+      --gray: #1a1a1a;
+      --light: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Arial Black', 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    a { color: var(--orange); text-decoration: none; }
+
+    header {
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, #000 0%, #0e0e0e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('Needle transparent-01.png') center/120px no-repeat;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .logo {
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ddd;
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      color: #000;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      border-radius: 4px;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .service {
+      background: linear-gradient(180deg, #151515, #0a0a0a);
+      padding: 2rem;
+      border: 1px solid #222;
+      position: relative;
+    }
+
+    .service::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+    }
+
+    .service h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .service img {
+      max-width: 100%;
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+
+    .region {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .contact {
+      background: linear-gradient(180deg, #0b0b0b, #000);
+      border-top: 1px solid #222;
+      text-align: center;
+    }
+
+    .phone {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
+      background: #000;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 1.8rem; }
+      .phone { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-flex">
-    <img src="images/Text-transparent-01.png" class="logo"/>
-    <a href="tel:8137611314" class="phone-cta">(813) 761-1314</a>
-  </div>
-</header>
+  <header>
+    <img src="Text transparent-01.png" alt="Keystone Backflow Services Logo" class="logo" />
+    <div class="tagline">Certified Backflow Protection • West Central Florida</div>
+    <div class="cta">
+      <a href="tel:8137611314">Call 813‑761‑1314</a>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Backflow Protection<br/>Done Right</h1>
-      <p>Certified testing, repairs, maintenance, and compliance reporting for West Central Florida.</p>
-      <a href="tel:8137611314" class="btn-primary">Call for Service</a>
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <img src="HQ transparent-01.png" alt="Backflow Testing" />
+        <h3>Backflow Testing</h3>
+        <p>Certified annual and initial backflow testing to protect potable water systems and meet local jurisdiction requirements.</p>
+      </div>
+      <div class="service">
+        <img src="HQ transparent-04.png" alt="Backflow Repairs" />
+        <h3>Repairs & Maintenance</h3>
+        <p>Professional diagnostics, repairs, and preventative maintenance to keep assemblies operating at peak performance.</p>
+      </div>
+      <div class="service">
+        <img src="HQ transparent-06.png" alt="Compliance Reporting" />
+        <h3>Compliance Reporting</h3>
+        <p>Accurate documentation and direct submission to municipalities so you stay compliant without the headache.</p>
+      </div>
     </div>
-    <div class="hero-visual">
-      <img src="images/HQ-transparent-01.png" class="gauge"/>
-      <img src="images/Needle-transparent-01.png" class="needle"/>
-    </div>
-  </div>
-</section>
+  </section>
+
+  <section class="region">
+    <p>Proudly serving <strong>West Central Florida</strong>, including commercial, industrial, and residential properties.</p>
+  </section>
+
+  <section class="contact">
+    <h2>Schedule Service</h2>
+    <p class="phone">813&nbsp;761&nbsp;1314</p>
+    <p>Fast response. Certified service. No shortcuts.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Keystone Backflow Services. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
