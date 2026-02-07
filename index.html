@@ -1,233 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Keystone Backflow Services | West Central Florida</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Certified Backflow Testing, Repair, and Compliance Services in West Central Florida. Call 813-761-1314." />
+<meta charset="UTF-8" />
+<title>Keystone Backflow Services | West Central Florida</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Certified Backflow Testing, Repair & Compliance in West Central Florida. Call 813-761-1314." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #ff7a00;
-      --dark: #0f172a;
-      --steel: #e5e7eb;
-      --light: #ffffff;
-      --muted: #64748b;
-    }
+<style>
+:root {
+  --primary: #ff7a00;
+  --primary-dark: #e66e00;
+  --dark: #0b1220;
+  --light: #ffffff;
+  --steel: #e5e7eb;
+  --muted: #6b7280;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.65;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a { text-decoration: none; color: inherit; }
 
-    /* ---------- NAV ---------- */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: white;
-      border-bottom: 1px solid var(--steel);
-    }
+/* ================= NAV ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 1px solid var(--steel);
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .nav img {
-      height: 50px;
-    }
+.nav img { height: 48px; }
 
-    .call-btn {
-      background: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-weight: 700;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-    }
+.nav a {
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  padding: 0.7rem 1.4rem;
+  border-radius: 5px;
+}
 
-    /* ---------- HERO ---------- */
-    .hero {
-      background: linear-gradient(135deg, #ffffff 60%, #f8fafc);
-      padding: 6rem 2rem;
-    }
+/* ================= HERO ================= */
+.hero {
+  background:
+    linear-gradient(120deg, #ffffff 60%, #f3f4f6),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.03),
+      rgba(0,0,0,0.03) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+  padding: 6.5rem 2rem;
+}
 
-    .hero-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
-    }
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
 
-    .hero h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
 
-    .hero h1 span {
-      color: var(--primary);
-    }
+.hero h1 span {
+  color: var(--primary);
+}
 
-    .hero p {
-      margin-top: 1.5rem;
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 520px;
-    }
+.hero p {
+  margin-top: 1.6rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 520px;
+}
 
-    .hero-actions {
-      margin-top: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 2rem;
-      font-weight: 700;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2.2rem;
+  font-weight: 800;
+  border-radius: 6px;
+}
 
-    .btn-outline {
-      border: 2px solid var(--dark);
-      padding: 1rem 2rem;
-      font-weight: 700;
-      border-radius: 4px;
-    }
+.btn-primary:hover { background: var(--primary-dark); }
 
-    .hero-logo {
-      text-align: center;
-    }
+.btn-outline {
+  border: 2px solid var(--dark);
+  padding: 1rem 2.2rem;
+  font-weight: 800;
+  border-radius: 6px;
+}
 
-    .hero-logo img {
-      max-width: 100%;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
-    }
+.hero-logo img {
+  max-width: 100%;
+  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
+}
 
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 5rem 2rem;
-    }
+/* ================= TRUST BAR ================= */
+.trust {
+  background: #f8fafc;
+  border-top: 1px solid var(--steel);
+  border-bottom: 1px solid var(--steel);
+  padding: 2rem;
+}
 
-    .section-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
+.trust-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
 
-    .section-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.4rem;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
+.trust strong {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
 
-    .section-title span {
-      color: var(--primary);
-    }
+/* ================= SECTIONS ================= */
+section { padding: 5.5rem 2rem; }
 
-    /* ---------- SERVICES ---------- */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
+.section-inner {
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .service-card {
-      background: white;
-      border: 1px solid var(--steel);
-      padding: 2rem;
-      border-radius: 6px;
-    }
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
 
-    .service-card h3 {
-      font-family: 'Oswald', sans-serif;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
+.section-title span { color: var(--primary); }
 
-    /* ---------- CTA ---------- */
-    .cta {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
+/* ================= SERVICES ================= */
+.services {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
 
-    .cta h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.6rem;
-      text-transform: uppercase;
-    }
+.service {
+  border: 1px solid var(--steel);
+  border-left: 6px solid var(--primary);
+  padding: 2.2rem;
+  border-radius: 6px;
+  background: white;
+}
 
-    .cta span {
-      color: var(--primary);
-    }
+.service h3 {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
 
-    .cta a {
-      display: inline-block;
-      margin-top: 2rem;
-      background: var(--primary);
-      padding: 1.2rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: 800;
-      border-radius: 6px;
-    }
+/* ================= WHY US ================= */
+.why {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+}
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: #f8fafc;
-      padding: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+.why-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
 
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+.why-box {
+  padding: 2rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--steel);
+}
 
-      .hero-actions {
-        justify-content: center;
-      }
-    }
-  </style>
+/* ================= CTA ================= */
+.cta {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 5.5rem 2rem;
+}
+
+.cta h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+}
+
+.cta span { color: var(--primary); }
+
+.cta a {
+  display: inline-block;
+  margin-top: 2.5rem;
+  background: var(--primary);
+  padding: 1.3rem 2.8rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #f8fafc;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-actions { justify-content: center; }
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <div class="nav">
     <img src="logo.png" alt="Keystone Backflow Services Logo">
-    <a class="call-btn" href="tel:8137611314">CALL 813-761-1314</a>
+    <a href="tel:8137611314">CALL 813-761-1314</a>
   </div>
 </header>
 
@@ -235,18 +265,18 @@
   <div class="hero-inner">
     <div>
       <h1>
-        Protecting <span>Florida’s Water</span><br>
-        One System at a Time
+        Backflow Protection<br>
+        <span>Done Right</span>
       </h1>
       <p>
         Certified backflow testing, repair, and compliance services
-        serving commercial, municipal, and residential properties
-        across West Central Florida.
+        trusted across West Central Florida by property managers,
+        municipalities, and business owners.
       </p>
 
       <div class="hero-actions">
         <a href="tel:8137611314" class="btn-primary">Schedule Service</a>
-        <a href="#services" class="btn-outline">Our Services</a>
+        <a href="#services" class="btn-outline">View Services</a>
       </div>
     </div>
 
@@ -256,37 +286,60 @@
   </div>
 </section>
 
+<div class="trust">
+  <div class="trust-inner">
+    <div><strong>✔ Certified & Insured</strong></div>
+    <div><strong>✔ Code-Compliant Reporting</strong></div>
+    <div><strong>✔ Fast Turnaround</strong></div>
+    <div><strong>✔ West Central Florida</strong></div>
+  </div>
+</div>
+
 <section id="services">
   <div class="section-inner">
-    <h2 class="section-title">Backflow <span>Services</span></h2>
+    <h2 class="section-title">Our <span>Services</span></h2>
 
     <div class="services">
-      <div class="service-card">
+      <div class="service">
         <h3>Annual Backflow Testing</h3>
-        <p>Certified inspections that meet all county and municipal compliance requirements.</p>
+        <p>Precision testing to meet county and municipal requirements.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service">
         <h3>Backflow Repair</h3>
-        <p>Fast, reliable repairs to keep your system protected and operational.</p>
+        <p>Professional repairs that restore compliance fast.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service">
         <h3>New Installations</h3>
-        <p>Code-compliant installations for new construction and system upgrades.</p>
+        <p>Code-approved installations for new or upgraded systems.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service">
         <h3>Compliance Reporting</h3>
-        <p>We handle the paperwork and submit reports directly to the proper authorities.</p>
+        <p>We submit reports directly so you don’t have to.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-inner">
+    <h2 class="section-title">Why <span>Keystone</span></h2>
+
+    <div class="why-grid">
+      <div class="why-box">We specialize exclusively in backflow—no shortcuts.</div>
+      <div class="why-box">You deal directly with certified professionals.</div>
+      <div class="why-box">We protect your water, liability, and reputation.</div>
+      <div class="why-box">Fast scheduling and clean documentation.</div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <h2>
-    West Central Florida’s <span>Backflow Specialists</span>
+    Protect Your System.<br>
+    <span>Stay Compliant.</span>
   </h2>
   <a href="tel:8137611314">CALL 813-761-1314</a>
 </section>
