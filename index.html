@@ -84,6 +84,7 @@ header {
   margin: auto;
 }
 
+/* ===== HERO TITLE + GAUGE ===== */
 .hero-title {
   display: flex;
   align-items: flex-start;
@@ -91,18 +92,18 @@ header {
 }
 
 .gauge-wrap {
-  margin-top: 0.4rem;
+  margin-top: 0.45rem;
 }
 
-.gauge {
+.hero-gauge {
   width: 52px;
   height: 52px;
+  transform: rotate(-8deg);
+  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-.gauge-needle {
-  transform-origin: 60px 60px;
-  transform: rotate(-90deg);
-  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
+.hero-gauge.activated {
+  transform: rotate(12deg); /* controlled pressure */
 }
 
 .hero h1 {
@@ -327,11 +328,12 @@ footer {
   <div class="hero-inner">
     <h1 class="hero-title">
       <span class="gauge-wrap">
-        <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
-          <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
-          <line x1="60" y1="60" x2="60" y2="16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" class="gauge-needle"/>
-          <circle cx="60" cy="60" r="4" fill="#ffffff"/>
-        </svg>
+        <img
+          src="logo-gauge.png"
+          alt=""
+          class="hero-gauge"
+          aria-hidden="true"
+        >
       </span>
       Pressure.<br><span>Handled.</span>
     </h1>
@@ -402,11 +404,11 @@ footer {
 </footer>
 
 <script>
-  // Animate gauge needle once on load
-  const needle = document.querySelector('.gauge-needle');
-  if (needle) {
+  // Activate gauge once on load
+  const gauge = document.querySelector('.hero-gauge');
+  if (gauge) {
     requestAnimationFrame(() => {
-      needle.style.transform = 'rotate(35deg)';
+      gauge.classList.add('activated');
     });
   }
 
