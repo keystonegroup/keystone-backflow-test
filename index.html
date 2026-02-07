@@ -6,7 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Certified Backflow Testing, Repair & Compliance in West Central Florida. Call 813-761-1314." />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<meta name="theme-color" content="#ff7a00">
 
 <style>
 :root {
@@ -29,7 +33,7 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
-/* ================= NAV ================= */
+/* ===== NAV ===== */
 header {
   position: sticky;
   top: 0;
@@ -52,12 +56,12 @@ header {
 .nav a {
   background: var(--primary);
   color: white;
-  font-weight: 800;
+  font-weight: 900;
   padding: 0.7rem 1.4rem;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero {
   background:
     linear-gradient(120deg, #ffffff 60%, #f3f4f6),
@@ -87,9 +91,7 @@ header {
   line-height: 1.05;
 }
 
-.hero h1 span {
-  color: var(--primary);
-}
+.hero h1 span { color: var(--primary); }
 
 .hero p {
   margin-top: 1.6rem;
@@ -109,7 +111,7 @@ header {
   background: var(--primary);
   color: white;
   padding: 1rem 2.2rem;
-  font-weight: 800;
+  font-weight: 900;
   border-radius: 6px;
 }
 
@@ -118,38 +120,42 @@ header {
 .btn-outline {
   border: 2px solid var(--dark);
   padding: 1rem 2.2rem;
-  font-weight: 800;
+  font-weight: 900;
   border-radius: 6px;
 }
 
 .hero-logo img {
   max-width: 100%;
   filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
+  transform-origin: center 60%;
+  animation: gaugeSweep 1.6s ease-out forwards;
 }
 
-/* ================= TRUST BAR ================= */
-.trust {
+@keyframes gaugeSweep {
+  from { transform: rotate(-25deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* ===== TRUST + AUTHORITY ===== */
+.trust, .authority {
   background: #f8fafc;
   border-top: 1px solid var(--steel);
   border-bottom: 1px solid var(--steel);
   padding: 2rem;
 }
 
-.trust-inner {
+.trust-inner, .authority-grid {
   max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   text-align: center;
-}
-
-.trust strong {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
 }
 
-/* ================= SECTIONS ================= */
+/* ===== SECTIONS ===== */
 section { padding: 5.5rem 2rem; }
 
 .section-inner {
@@ -165,7 +171,7 @@ section { padding: 5.5rem 2rem; }
 
 .section-title span { color: var(--primary); }
 
-/* ================= SERVICES ================= */
+/* ===== SERVICES ===== */
 .services {
   margin-top: 3rem;
   display: grid;
@@ -187,7 +193,7 @@ section { padding: 5.5rem 2rem; }
   text-transform: uppercase;
 }
 
-/* ================= WHY US ================= */
+/* ===== WHY ===== */
 .why {
   background: linear-gradient(180deg, #ffffff, #f9fafb);
 }
@@ -206,7 +212,7 @@ section { padding: 5.5rem 2rem; }
   border: 1px solid var(--steel);
 }
 
-/* ================= CTA ================= */
+/* ===== CTA ===== */
 .cta {
   background: var(--dark);
   color: white;
@@ -232,7 +238,7 @@ section { padding: 5.5rem 2rem; }
   border-radius: 8px;
 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer {
   background: #f8fafc;
   padding: 2rem;
@@ -241,13 +247,32 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+/* ===== MOBILE CALL BAR ===== */
+.mobile-call-bar { display: none; }
+
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
   .hero-actions { justify-content: center; }
+
+  .mobile-call-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    text-align: center;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .mobile-call-bar a {
+    color: white;
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+
+  body { padding-bottom: 70px; }
 }
 </style>
 </head>
@@ -264,22 +289,16 @@ footer {
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <h1>
-        Backflow Protection<br>
-        <span>Done Right</span>
-      </h1>
+      <h1>Backflow Protection<br><span>Done Right</span></h1>
       <p>
-        Certified backflow testing, repair, and compliance services
-        trusted across West Central Florida by property managers,
-        municipalities, and business owners.
+        Certified backflow testing, repair, and compliance services trusted
+        across West Central Florida.
       </p>
-
       <div class="hero-actions">
-        <a href="tel:8137611314" class="btn-primary">Schedule Service</a>
-        <a href="#services" class="btn-outline">View Services</a>
+        <a href="tel:8137611314" class="btn-primary">Speak to a Certified Tech</a>
+        <a href="#services" class="btn-outline">See Our Services</a>
       </div>
     </div>
-
     <div class="hero-logo">
       <img src="logo.png" alt="Keystone Backflow Gauge Logo">
     </div>
@@ -288,37 +307,21 @@ footer {
 
 <div class="trust">
   <div class="trust-inner">
-    <div><strong>✔ Certified & Insured</strong></div>
-    <div><strong>✔ Code-Compliant Reporting</strong></div>
-    <div><strong>✔ Fast Turnaround</strong></div>
-    <div><strong>✔ West Central Florida</strong></div>
+    <div>Certified & Insured</div>
+    <div>Fast Turnaround</div>
+    <div>Code Compliant</div>
+    <div>West Central Florida</div>
   </div>
 </div>
 
 <section id="services">
   <div class="section-inner">
     <h2 class="section-title">Our <span>Services</span></h2>
-
     <div class="services">
-      <div class="service">
-        <h3>Annual Backflow Testing</h3>
-        <p>Precision testing to meet county and municipal requirements.</p>
-      </div>
-
-      <div class="service">
-        <h3>Backflow Repair</h3>
-        <p>Professional repairs that restore compliance fast.</p>
-      </div>
-
-      <div class="service">
-        <h3>New Installations</h3>
-        <p>Code-approved installations for new or upgraded systems.</p>
-      </div>
-
-      <div class="service">
-        <h3>Compliance Reporting</h3>
-        <p>We submit reports directly so you don’t have to.</p>
-      </div>
+      <div class="service"><h3>Annual Testing</h3><p>Municipal and county compliant testing.</p></div>
+      <div class="service"><h3>Backflow Repair</h3><p>Fast, professional repairs.</p></div>
+      <div class="service"><h3>New Installations</h3><p>Code-approved installs.</p></div>
+      <div class="service"><h3>Compliance Reporting</h3><p>We submit everything for you.</p></div>
     </div>
   </div>
 </section>
@@ -326,21 +329,24 @@ footer {
 <section class="why">
   <div class="section-inner">
     <h2 class="section-title">Why <span>Keystone</span></h2>
-
     <div class="why-grid">
-      <div class="why-box">We specialize exclusively in backflow—no shortcuts.</div>
-      <div class="why-box">You deal directly with certified professionals.</div>
-      <div class="why-box">We protect your water, liability, and reputation.</div>
-      <div class="why-box">Fast scheduling and clean documentation.</div>
+      <div class="why-box">Backflow specialists only.</div>
+      <div class="why-box">Certified professionals.</div>
+      <div class="why-box">Protect your water and liability.</div>
+      <div class="why-box">Clean documentation. No stress.</div>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">Serving <span>West Central Florida</span></h2>
+    <p>Tampa, Clearwater, St. Petersburg, Lakeland, Brandon, Riverview & surrounding areas.</p>
+  </div>
+</section>
+
 <section class="cta">
-  <h2>
-    Protect Your System.<br>
-    <span>Stay Compliant.</span>
-  </h2>
+  <h2>Protect Your System.<br><span>Stay Compliant.</span></h2>
   <a href="tel:8137611314">CALL 813-761-1314</a>
 </section>
 
@@ -348,8 +354,12 @@ footer {
   © <span id="year"></span> Keystone Backflow Services · West Central Florida
 </footer>
 
+<div class="mobile-call-bar">
+  <a href="tel:8137611314">📞 Call 813-761-1314</a>
+</div>
+
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
