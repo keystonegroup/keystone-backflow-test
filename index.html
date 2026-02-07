@@ -1,274 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keystone Backflow Services | West Central Florida</title>
-
-<meta name="description" content="Certified backflow testing, repairs, and compliance reporting in West Central Florida. Call 813-761-1314 for fast, reliable service.">
-
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --black: #0b0b0b;
-  --dark: #111;
-  --steel: #1f2933;
-  --accent: #e63946;
-  --gray: #c7c7c7;
-  --white: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--black);
-  color: var(--white);
-  line-height: 1.6;
-}
-
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.85);
-  border-bottom: 1px solid #222;
-  z-index: 1000;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.call-btn {
-  background: var(--accent);
-  color: var(--white);
-  padding: 0.75rem 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.call-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(230,57,70,0.5);
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1400&q=80');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 1200px;
-  margin: auto;
-  padding: 6rem 1.5rem 3rem;
-}
-
-.hero h1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 span {
-  color: var(--accent);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 650px;
-  color: var(--gray);
-  margin-bottom: 2rem;
-}
-
-.hero-actions a {
-  display: inline-block;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
-
-.secondary-btn {
-  border: 2px solid var(--white);
-  padding: 0.75rem 1.25rem;
-  text-decoration: none;
-  color: var(--white);
-  font-weight: 700;
-}
-
-/* SECTIONS */
-section {
-  padding: 5rem 1.5rem;
-}
-
-.section-inner {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-/* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.service-card {
-  background: var(--steel);
-  padding: 2rem;
-  border-left: 6px solid var(--accent);
-}
-
-.service-card h3 {
-  font-family: 'Oswald', sans-serif;
-  margin-bottom: 1rem;
-}
-
-/* AUTHORITY */
-.authority {
-  background: linear-gradient(145deg, #111, #050505);
-  text-align: center;
-}
-
-.authority p {
-  max-width: 800px;
-  margin: auto;
-  color: var(--gray);
-  font-size: 1.1rem;
-}
-
-/* CTA */
-.cta {
-  background: var(--accent);
-  text-align: center;
-}
-
-.cta h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta a {
-  display: inline-block;
-  background: #000;
-  color: var(--white);
-  padding: 1rem 1.5rem;
-  font-weight: 800;
-  text-decoration: none;
-  margin-top: 1rem;
-}
-
-/* FOOTER */
-footer {
-  background: #000;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  color: #777;
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    padding-top: 7rem;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>Keystone Backflow Services | West Central Florida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Certified backflow testing & compliance in West Central Florida. Fast. Reliable. No nonsense." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">KEYSTONE BACKFLOW</div>
-    <a class="call-btn" href="tel:8137611314">CALL 813-761-1314</a>
+<header class="hero">
+  <nav class="nav">
+    <img src="HQ transparent-01.png" alt="Keystone Backflow Services Logo" class="logo" />
+    <a href="tel:8137611314" class="cta-phone">📞 813-761-1314</a>
+  </nav>
+
+  <div class="hero-content">
+    <h1>BACKFLOW<br><span>DONE RIGHT</span></h1>
+    <p>Certified Backflow Testing & Compliance<br>Serving West Central Florida</p>
+    <a href="tel:8137611314" class="cta-button">CALL NOW</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>PROTECTING WATER SYSTEMS.<br><span>NO COMPROMISE.</span></h1>
-    <p>
-      Certified backflow testing, repairs, and compliance reporting for commercial and residential properties across West Central Florida.
-    </p>
-    <div class="hero-actions">
-      <a class="call-btn" href="tel:8137611314">GET SERVICE NOW</a>
-      <a class="secondary-btn" href="#services">VIEW SERVICES</a>
+<section class="power">
+  <div class="power-grid">
+    <div>
+      <h2>No Delays. No Excuses.</h2>
+      <p>
+        We specialize in fast, accurate backflow testing for commercial and residential properties.
+        We handle compliance so you don’t have to.
+      </p>
+    </div>
+    <div class="stats">
+      <div><strong>✔</strong> Certified & Insured</div>
+      <div><strong>✔</strong> Code Compliant</div>
+      <div><strong>✔</strong> Rapid Turnaround</div>
+      <div><strong>✔</strong> Local & Reliable</div>
     </div>
   </div>
 </section>
 
-<section id="services">
-  <div class="section-inner">
-    <h2 class="section-title">OUR SERVICES</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Backflow Testing</h3>
-        <p>Certified testing to ensure your system meets Florida and municipal safety requirements.</p>
-      </div>
-      <div class="service-card">
-        <h3>Repairs & Maintenance</h3>
-        <p>Fast, professional repairs to keep your system operational and compliant year-round.</p>
-      </div>
-      <div class="service-card">
-        <h3>Compliance Reporting</h3>
-        <p>Accurate documentation submitted directly to local authorities—no headaches, no missed deadlines.</p>
-      </div>
-    </div>
+<section class="services">
+  <h2>OUR SERVICES</h2>
+  <div class="service-cards">
+    <div class="card">Backflow Testing</div>
+    <div class="card">Annual Certifications</div>
+    <div class="card">Repairs & Replacements</div>
+    <div class="card">City & County Compliance</div>
+    <div class="card">Commercial & Residential</div>
   </div>
 </section>
 
-<section class="authority">
-  <div class="section-inner">
-    <h2 class="section-title">WHY KEYSTONE</h2>
-    <p>
-      Backflow prevention isn’t optional—it’s the law. Keystone Backflow Services delivers reliable, no-nonsense service that protects public water supplies and keeps your property in compliance. We show up. We do it right. We document everything.
-    </p>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="section-inner">
-    <h2>NEED BACKFLOW SERVICE?</h2>
-    <p>Serving West Central Florida • Fast Scheduling • Certified Professionals</p>
-    <a href="tel:8137611314">CALL 813-761-1314</a>
-  </div>
+<section class="cta-strip">
+  <h2>Protect Your Water. Stay Compliant.</h2>
+  <a href="tel:8137611314">📞 813-761-1314</a>
 </section>
 
 <footer>
-  <p>© 2026 Keystone Backflow Services • West Central Florida</p>
+  <img src="HQ transparent-01.png" alt="Keystone Logo" />
+  <p>Keystone Backflow Services</p>
+  <p>Serving West Central Florida</p>
+  <p class="small">© 2026 Keystone Backflow Services. All Rights Reserved.</p>
 </footer>
 
 </body>
