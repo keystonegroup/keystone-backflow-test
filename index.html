@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Keystone Backflow Services | West Central Florida</title>
-<meta name="description" content="Certified backflow testing, repair, and compliance across West Central Florida. Call 813-761-1314.">
 
 <style>
 :root {
@@ -18,15 +17,12 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
 body{background:var(--bg);color:#111}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:var(--dark);
   border-bottom:5px solid transparent;
   border-image:linear-gradient(to right,var(--red),var(--orange));
   border-image-slice:1;
-  position:sticky;
-  top:0;
-  z-index:1000;
 }
 .nav{
   max-width:1300px;
@@ -37,16 +33,8 @@ header{
   align-items:center;
 }
 .logo img{height:48px}
-.call-btn{
-  background:linear-gradient(135deg,var(--red),var(--orange));
-  color:#fff;
-  padding:.85rem 2rem;
-  font-weight:900;
-  text-transform:uppercase;
-  clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
-}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   position:relative;
   overflow:hidden;
@@ -67,7 +55,7 @@ header{
 }
 .hero-title{
   display:flex;
-  gap:1.2rem;
+  gap:1.4rem;
   align-items:flex-start;
 }
 .hero h1{
@@ -77,43 +65,46 @@ header{
   line-height:1;
 }
 .hero h1 span{display:block;color:#fff}
-.hero p{
-  margin-top:1.6rem;
-  max-width:620px;
-  font-size:1.25rem;
-  font-weight:600;
-}
-.hero-cta{margin-top:2.8rem}
-.hero-cta a{
-  background:#111;
-  color:#fff;
-  padding:1.3rem 3.2rem;
-  font-weight:900;
-  text-transform:uppercase;
-}
 
-/* ===== GAUGE ===== */
-.hero-gauge{
+/* GAUGE WRAP */
+.gauge-wrap{
+  position:relative;
   width:64px;
   height:64px;
 }
-.gauge-needle{
-  transform-origin:500px 500px;
-  transform:rotate(-65deg);
-  transition:transform .9s cubic-bezier(.4,0,.2,1);
+
+/* GAUGE IMAGE */
+.gauge-wrap img{
+  width:100%;
+  height:100%;
+  display:block;
 }
 
-/* ===== SCROLL INDICATOR ===== */
+/* NEEDLE OVERLAY */
+.needle{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:2px;
+  height:28px;
+  background:#fff;
+  transform-origin:bottom center;
+  transform:translate(-50%, -100%) rotate(-60deg);
+  transition:transform .9s cubic-bezier(.4,0,.2,1);
+  border-radius:2px;
+}
+
+/* SCROLL INDICATOR */
 .scroll-indicator{
   position:absolute;
   bottom:22px;
   left:50%;
   transform:translateX(-50%);
-  text-align:center;
   color:rgba(255,255,255,.55);
   font-size:.65rem;
   letter-spacing:1.5px;
   text-transform:uppercase;
+  text-align:center;
   transition:opacity .2s ease-out;
 }
 .scroll-indicator.hidden{opacity:0}
@@ -122,77 +113,6 @@ header{
   height:30px;
   background:rgba(255,255,255,.45);
   margin:8px auto 0;
-}
-
-/* ===== TRUST ===== */
-.trust{
-  background:#111;
-  color:#fff;
-  padding:3.2rem 2rem;
-}
-.trust-grid{
-  max-width:1300px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:2rem;
-  text-align:center;
-}
-.trust h3{color:var(--orange);font-weight:900;text-transform:uppercase}
-
-/* ===== SERVICES ===== */
-.services{padding:6.5rem 2rem}
-.services-inner{max-width:1300px;margin:auto}
-.services h2{
-  font-size:3rem;
-  font-weight:900;
-  text-transform:uppercase;
-  margin-bottom:3.5rem;
-  border-left:10px solid var(--red);
-  padding-left:1rem;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2.2rem;
-}
-.card{
-  background:#fff;
-  padding:2.6rem;
-  border-top:6px solid var(--red);
-  box-shadow:0 25px 50px rgba(0,0,0,.12);
-}
-.card h3{font-size:1.6rem;font-weight:900}
-
-/* ===== CTA ===== */
-.cta{
-  background:linear-gradient(135deg,#000,#111);
-  color:#fff;
-  padding:5.5rem 2rem;
-  text-align:center;
-}
-.cta h2{font-size:3.3rem;font-weight:900;text-transform:uppercase}
-.cta p{margin:1.6rem 0 2.8rem;font-size:1.35rem;font-weight:600}
-.cta a{
-  background:linear-gradient(135deg,var(--red),var(--orange));
-  padding:1.3rem 3.4rem;
-  font-weight:900;
-  text-transform:uppercase;
-  clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
-}
-
-/* ===== FOOTER ===== */
-footer{
-  background:#000;
-  color:#9ca3af;
-  padding:4rem 2rem 3rem;
-  text-align:center;
-}
-.footer-inner img{height:64px;margin-bottom:1rem}
-.footer-bottom{
-  margin-top:2rem;
-  font-size:.85rem;
-  color:#6b7280;
 }
 </style>
 </head>
@@ -204,7 +124,6 @@ footer{
     <div class="logo">
       <img src="logo-wide.png" alt="Keystone Backflow Services">
     </div>
-    <a href="tel:18137611314" class="call-btn">Call 813-761-1314</a>
   </div>
 </header>
 
@@ -214,33 +133,14 @@ footer{
   <div class="hero-inner">
     <h1 class="hero-title">
 
-      <!-- GAUGE SVG (CROPPED + FIXED) -->
-      <svg class="hero-gauge" viewBox="300 300 400 400" aria-hidden="true">
-
-        <!-- HOUSING -->
-        <g>
-          <!-- all original gauge housing paths here (unchanged) -->
-        </g>
-
-        <!-- NEEDLE (REAL PATH, ANIMATED) -->
-        <path class="st4 gauge-needle"
-          d="M478.44,650.88h42.66l-6.04-19.34c4.78-4.21,7.81-10.37,7.81-17.24
-          c0-8.24-4.35-15.44-10.86-19.51l-11.4-98.41l-12.69,98.29
-          c-6.62,4.04-11.05,11.31-11.05,19.63c0,6.68,2.86,12.67,7.4,16.87
-          L478.44,650.88z"/>
-      </svg>
+      <!-- GAUGE -->
+      <span class="gauge-wrap">
+        <img src="logo-gauge.png" alt="" aria-hidden="true">
+        <span class="needle"></span>
+      </span>
 
       Pressure.<br><span>Handled.</span>
     </h1>
-
-    <p>
-      Certified backflow testing and repair — no delays, no compliance headaches.
-      Serving <strong>West Central Florida</strong>.
-    </p>
-
-    <div class="hero-cta">
-      <a href="tel:18137611314">Call Now</a>
-    </div>
   </div>
 
   <div class="scroll-indicator">
@@ -249,51 +149,11 @@ footer{
   </div>
 </section>
 
-<section class="trust">
-  <div class="trust-grid">
-    <div><h3>Certified</h3><p>State & Local Compliant</p></div>
-    <div><h3>Fast</h3><p>No Waiting. No Delays.</p></div>
-    <div><h3>Local</h3><p>West Central Florida</p></div>
-    <div><h3>Reliable</h3><p>Done Right the First Time</p></div>
-  </div>
-</section>
-
-<section class="services">
-  <div class="services-inner">
-    <h2>Services</h2>
-    <div class="cards">
-      <div class="card"><h3>Backflow Testing</h3><p>Certified annual testing.</p></div>
-      <div class="card"><h3>Backflow Repair</h3><p>Professional repairs.</p></div>
-      <div class="card"><h3>Installation</h3><p>New installs & replacements.</p></div>
-      <div class="card"><h3>Compliance</h3><p>Paperwork handled for you.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Protect Your Water System</h2>
-  <p>Call Keystone Backflow Services today.</p>
-  <a href="tel:18137611314">Call 813-761-1314</a>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <img src="logo-gauge.png" alt="Keystone Backflow Services Gauge">
-    <p>
-      <a href="/privacy-policy.html">Privacy Policy</a> ·
-      <a href="/sms-terms.html">SMS Terms & Conditions</a>
-    </p>
-  </div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Keystone Backflow Services
-  </div>
-</footer>
-
 <script>
 /* Animate needle once */
-const needle=document.querySelector('.gauge-needle');
+const needle=document.querySelector('.needle');
 if(needle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  requestAnimationFrame(()=>needle.style.transform='rotate(25deg)');
+  requestAnimationFrame(()=>needle.style.transform='translate(-50%, -100%) rotate(25deg)');
 }
 
 /* Hide scroll indicator */
@@ -301,8 +161,6 @@ const indicator=document.querySelector('.scroll-indicator');
 if(indicator){
   window.addEventListener('scroll',()=>indicator.classList.add('hidden'),{once:true});
 }
-
-document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 
 </body>
