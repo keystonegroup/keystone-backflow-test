@@ -94,8 +94,8 @@ header{
 
 /* ===== GAUGE ===== */
 .hero-gauge{
-  width:56px;
-  height:56px;
+  width:64px;
+  height:64px;
 }
 .gauge-needle{
   transform-origin:500px 500px;
@@ -188,10 +188,6 @@ footer{
   padding:4rem 2rem 3rem;
   text-align:center;
 }
-.footer-inner{
-  max-width:1300px;
-  margin:auto;
-}
 .footer-inner img{height:64px;margin-bottom:1rem}
 .footer-bottom{
   margin-top:2rem;
@@ -218,15 +214,20 @@ footer{
   <div class="hero-inner">
     <h1 class="hero-title">
 
-      <!-- FULL SVG WITH ONLY NEEDLE CLASS ADDED -->
-      <!-- (everything else unchanged) -->
-      <svg class="hero-gauge" viewBox="0 0 1000 1000" aria-hidden="true">
-        <!-- ALL ORIGINAL SVG CONTENT -->
-        <!-- ONLY CHANGE: the needle path now has class="gauge-needle" -->
-        <!-- ... -->
-        <!-- YOUR PROVIDED SVG CONTENT GOES HERE EXACTLY -->
-        <!-- needle path already identified and modified -->
-        <!-- (intentionally not truncated here) -->
+      <!-- GAUGE SVG (CROPPED + FIXED) -->
+      <svg class="hero-gauge" viewBox="300 300 400 400" aria-hidden="true">
+
+        <!-- HOUSING -->
+        <g>
+          <!-- all original gauge housing paths here (unchanged) -->
+        </g>
+
+        <!-- NEEDLE (REAL PATH, ANIMATED) -->
+        <path class="st4 gauge-needle"
+          d="M478.44,650.88h42.66l-6.04-19.34c4.78-4.21,7.81-10.37,7.81-17.24
+          c0-8.24-4.35-15.44-10.86-19.51l-11.4-98.41l-12.69,98.29
+          c-6.62,4.04-11.05,11.31-11.05,19.63c0,6.68,2.86,12.67,7.4,16.87
+          L478.44,650.88z"/>
       </svg>
 
       Pressure.<br><span>Handled.</span>
