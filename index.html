@@ -119,6 +119,29 @@ header {
   box-shadow: 0 25px 55px rgba(0,0,0,0.45);
 }
 
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.scroll-indicator .scroll-line {
+  width: 1px;
+  height: 42px;
+  background: rgba(255,255,255,0.85);
+  margin: 10px auto 0;
+}
+
 /* ===== TRUST ===== */
 .trust {
   background: #111;
@@ -248,6 +271,7 @@ footer {
 
 <section class="hero">
   <div class="hero-bg"></div>
+
   <div class="hero-inner">
     <h1>
       Pressure.<br>
@@ -261,26 +285,20 @@ footer {
       <a href="tel:18137611314">Call Now</a>
     </div>
   </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
 <section class="trust">
   <div class="trust-grid">
-    <div>
-      <h3>Certified</h3>
-      <p>State & Local Compliant</p>
-    </div>
-    <div>
-      <h3>Fast Response</h3>
-      <p>No Waiting. No Delays.</p>
-    </div>
-    <div>
-      <h3>Local</h3>
-      <p>West Central Florida</p>
-    </div>
-    <div>
-      <h3>Reliable</h3>
-      <p>Done Right the First Time</p>
-    </div>
+    <div><h3>Certified</h3><p>State & Local Compliant</p></div>
+    <div><h3>Fast Response</h3><p>No Waiting. No Delays.</p></div>
+    <div><h3>Local</h3><p>West Central Florida</p></div>
+    <div><h3>Reliable</h3><p>Done Right the First Time</p></div>
   </div>
 </section>
 
