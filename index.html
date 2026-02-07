@@ -49,7 +49,6 @@ header {
 
 .logo img {
   height: 48px;
-  display: block;
 }
 
 .call-btn {
@@ -83,6 +82,27 @@ header {
   z-index: 1;
   max-width: 1300px;
   margin: auto;
+}
+
+.hero-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.gauge-wrap {
+  margin-top: 0.4rem;
+}
+
+.gauge {
+  width: 52px;
+  height: 52px;
+}
+
+.gauge-needle {
+  transform-origin: 60px 60px;
+  transform: rotate(-90deg);
+  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .hero h1 {
@@ -119,7 +139,7 @@ header {
   box-shadow: 0 25px 55px rgba(0,0,0,0.45);
 }
 
-/* ===== SCROLL INDICATOR (SUBTLE + ONE-TIME) ===== */
+/* ===== SCROLL INDICATOR ===== */
 .scroll-indicator {
   position: absolute;
   bottom: 22px;
@@ -239,7 +259,6 @@ footer {
   background: #000;
   color: #9ca3af;
   padding: 4rem 2rem 3rem;
-  font-weight: 600;
 }
 
 .footer-inner {
@@ -267,6 +286,10 @@ footer {
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
   .logo img { height: 42px; }
+
+  .hero-title {
+    justify-content: center;
+  }
 
   .hero h1,
   .hero p,
@@ -302,11 +325,22 @@ footer {
   <div class="hero-bg"></div>
 
   <div class="hero-inner">
-    <h1>Pressure.<br><span>Handled.</span></h1>
+    <h1 class="hero-title">
+      <span class="gauge-wrap">
+        <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
+          <line x1="60" y1="60" x2="60" y2="16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" class="gauge-needle"/>
+          <circle cx="60" cy="60" r="4" fill="#ffffff"/>
+        </svg>
+      </span>
+      Pressure.<br><span>Handled.</span>
+    </h1>
+
     <p>
       Certified backflow testing and repair — no delays, no compliance headaches.
       Serving <strong>West Central Florida</strong>.
     </p>
+
     <div class="hero-cta">
       <a href="tel:18137611314">Call Now</a>
     </div>
@@ -368,6 +402,14 @@ footer {
 </footer>
 
 <script>
+  // Animate gauge needle once on load
+  const needle = document.querySelector('.gauge-needle');
+  if (needle) {
+    requestAnimationFrame(() => {
+      needle.style.transform = 'rotate(35deg)';
+    });
+  }
+
   // Hide scroll indicator after first scroll
   const scrollIndicator = document.querySelector('.scroll-indicator');
   if (scrollIndicator) {
