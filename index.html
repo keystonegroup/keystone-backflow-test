@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keystone Backflow Services | West Central Florida</title>
 
-<meta name="description" content="Fast, certified backflow testing, repair, and compliance across West Central Florida. Call 813-761-1314.">
+<title>Keystone Backflow Services | West Central Florida</title>
+<meta name="description" content="Certified backflow testing, repair, and compliance across West Central Florida. Fast response. No compliance headaches. Call 813-761-1314.">
 
 <style>
 :root {
   --red: #dc2626;
   --orange: #fb923c;
   --dark: #0b0b0b;
-  --steel: #1f2933;
   --light: #ffffff;
   --gray: #6b7280;
   --bg: #f4f6f8;
@@ -33,7 +32,9 @@ body {
 /* ===== HEADER ===== */
 header {
   background: #fff;
-  border-bottom: 5px solid var(--red);
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, var(--red), var(--orange));
+  border-image-slice: 1;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -42,26 +43,27 @@ header {
 .nav {
   max-width: 1300px;
   margin: auto;
-  padding: 1.2rem 2rem;
+  padding: 1.1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo img {
-  height: 58px;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
 }
 
 .call-btn {
   background: linear-gradient(135deg, var(--red), var(--orange));
   color: #fff;
-  padding: 0.9rem 2rem;
+  padding: 0.85rem 2rem;
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
   clip-path: polygon(6% 0,100% 0,94% 100%,0 100%);
-  box-shadow: 0 18px 40px rgba(220,38,38,0.6);
+  box-shadow: 0 18px 40px rgba(220,38,38,0.55);
   transition: transform 0.2s ease;
 }
 
@@ -108,7 +110,7 @@ header {
 
 .hero p {
   margin-top: 1.6rem;
-  max-width: 600px;
+  max-width: 620px;
   font-size: 1.25rem;
   font-weight: 600;
   color: #111;
@@ -129,7 +131,7 @@ header {
   box-shadow: 0 25px 55px rgba(0,0,0,0.45);
 }
 
-/* ===== TRUST STRIP ===== */
+/* ===== TRUST ===== */
 .trust {
   background: #111;
   color: #fff;
@@ -189,7 +191,7 @@ header {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .card h3 {
@@ -203,7 +205,7 @@ header {
   color: #4b5563;
 }
 
-/* ===== FINAL CTA ===== */
+/* ===== CTA ===== */
 .cta {
   background: linear-gradient(135deg, #000, #111);
   color: #fff;
@@ -241,19 +243,21 @@ footer {
   font-weight: 600;
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-  .hero h1 {
+  .logo img {
+    height: 42px;
+  }
+
+  .hero h1,
+  .hero p,
+  .hero-cta {
     text-align: center;
   }
 
   .hero p {
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .hero-cta {
-    text-align: center;
   }
 }
 </style>
@@ -264,7 +268,7 @@ footer {
 <header>
   <div class="nav">
     <div class="logo">
-      <img src="logo.png" alt="Keystone Backflow Services">
+      <img src="logo-wide.png" alt="Keystone Backflow Services">
     </div>
     <a href="tel:18137611314" class="call-btn">Call 813-761-1314</a>
   </div>
@@ -278,9 +282,8 @@ footer {
       <span>Handled.</span>
     </h1>
     <p>
-      Fast, certified backflow testing, repair, and compliance —
-      engineered for zero downtime across
-      <strong>West Central Florida</strong>.
+      Certified backflow testing and repair — no delays, no compliance headaches.
+      Serving <strong>West Central Florida</strong>.
     </p>
     <div class="hero-cta">
       <a href="tel:18137611314">Call Now</a>
@@ -315,11 +318,11 @@ footer {
     <div class="cards">
       <div class="card">
         <h3>Backflow Testing</h3>
-        <p>Certified annual testing that keeps you compliant and protected.</p>
+        <p>Certified annual testing to keep you compliant and protected.</p>
       </div>
       <div class="card">
         <h3>Backflow Repair</h3>
-        <p>Rapid diagnostics and professional-grade fixes.</p>
+        <p>Rapid diagnostics and professional-grade repairs.</p>
       </div>
       <div class="card">
         <h3>Installation</h3>
@@ -327,7 +330,7 @@ footer {
       </div>
       <div class="card">
         <h3>Compliance Handling</h3>
-        <p>Reports, submissions, and documentation handled for you.</p>
+        <p>Reporting and paperwork handled for you.</p>
       </div>
     </div>
   </div>
