@@ -5,19 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Keystone Backflow Services | West Central Florida</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --accent: #ff6a00;
-  --dark: #0f172a;
+  --dark: #020617;
   --light: #ffffff;
   --steel: #e5e7eb;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -27,10 +25,10 @@ body {
   line-height: 1.6;
 }
 
-/* ---------- HEADER ---------- */
+/* ================= HEADER ================= */
 header {
-  background: linear-gradient(135deg, #ffffff, #f1f5f9);
-  border-bottom: 4px solid var(--accent);
+  background: white;
+  border-bottom: 5px solid var(--accent);
 }
 
 .nav {
@@ -38,34 +36,26 @@ header {
   margin: auto;
   padding: 1rem 1.5rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-.nav img {
-  height: 64px;
-}
+.nav img { height: 64px; }
 
 .nav a {
-  font-weight: 600;
-  color: var(--dark);
   text-decoration: none;
-  border: 2px solid var(--accent);
-  padding: 0.6rem 1.2rem;
+  font-weight: 800;
+  padding: 0.7rem 1.4rem;
   border-radius: 6px;
-  transition: all 0.25s ease;
-}
-
-.nav a:hover {
   background: var(--accent);
-  color: #fff;
+  color: white;
 }
 
-/* ---------- HERO ---------- */
+/* ================= HERO ================= */
 .hero {
   padding: 5rem 1.5rem;
   background:
-    radial-gradient(circle at top right, rgba(255,106,0,0.15), transparent 40%),
+    linear-gradient(120deg, rgba(255,106,0,0.15), transparent 35%),
     linear-gradient(180deg, #ffffff, #f8fafc);
 }
 
@@ -79,20 +69,27 @@ header {
 
 .hero h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
   text-transform: uppercase;
-  line-height: 1.1;
-  margin-bottom: 1rem;
+  line-height: 1.05;
 }
 
-.hero h1 span {
-  color: var(--accent);
-}
+.hero h1 span { color: var(--accent); }
 
 .hero p {
-  font-size: 1.1rem;
-  max-width: 520px;
+  font-size: 1.15rem;
+  max-width: 560px;
+  font-weight: 600;
 }
+
+.hero-graphic {
+  border: 4px solid var(--steel);
+  border-radius: 20px;
+  padding: 2rem;
+  background: white;
+}
+
+.hero-graphic img { width: 100%; }
 
 .cta {
   margin-top: 2rem;
@@ -103,39 +100,43 @@ header {
 
 .cta a {
   text-decoration: none;
-  font-weight: 700;
-  padding: 1rem 1.6rem;
+  font-weight: 800;
+  padding: 1rem 1.8rem;
   border-radius: 6px;
 }
 
-.cta .primary {
+.primary {
   background: var(--accent);
   color: white;
 }
 
-.cta .secondary {
-  border: 2px solid var(--dark);
+.secondary {
+  border: 3px solid var(--dark);
   color: var(--dark);
 }
 
-.hero-graphic {
-  background: linear-gradient(145deg, #f1f5f9, #ffffff);
-  border: 3px solid var(--steel);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* ================= AUTHORITY BAR ================= */
+.authority {
+  background: var(--dark);
+  color: white;
+  border-top: 6px solid var(--accent);
+  border-bottom: 6px solid var(--accent);
 }
 
-.hero-graphic img {
-  max-width: 100%;
+.authority-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.05em;
 }
 
-/* ---------- SERVICES ---------- */
-section {
-  padding: 4rem 1.5rem;
-}
+/* ================= SECTIONS ================= */
+section { padding: 4rem 1.5rem; }
 
 .section-inner {
   max-width: 1200px;
@@ -145,27 +146,21 @@ section {
 .section-title {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   margin-bottom: 2rem;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
   gap: 1.8rem;
 }
 
 .card {
-  border: 2px solid var(--steel);
-  border-radius: 14px;
+  border: 3px solid var(--steel);
+  border-radius: 16px;
   padding: 2rem;
-  transition: all 0.3s ease;
   background: white;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
 }
 
 .card h3 {
@@ -173,17 +168,28 @@ section {
   color: var(--accent);
 }
 
-/* ---------- STRIPE ---------- */
+/* ================= WARNING STRIPE ================= */
+.warning {
+  background: linear-gradient(135deg,#fff7ed,#ffffff);
+  border-top: 6px solid var(--accent);
+}
+
+.warning ul {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+/* ================= CTA STRIPE ================= */
 .stripe {
-  background: linear-gradient(135deg, #ff6a00, #ff9f1c);
+  background: linear-gradient(135deg,#ff6a00,#ff9f1c);
   color: white;
   text-align: center;
 }
 
 .stripe h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.6rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.8rem;
 }
 
 .stripe a {
@@ -191,15 +197,15 @@ section {
   margin-top: 1.5rem;
   background: white;
   color: var(--accent);
-  padding: 1rem 1.8rem;
-  border-radius: 6px;
-  font-weight: 800;
+  padding: 1.1rem 2rem;
+  font-weight: 900;
   text-decoration: none;
+  border-radius: 6px;
 }
 
-/* ---------- FOOTER ---------- */
+/* ================= FOOTER ================= */
 footer {
-  background: #020617;
+  background: var(--dark);
   color: #cbd5f5;
   padding: 3rem 1.5rem;
 }
@@ -207,19 +213,13 @@ footer {
 .footer-inner {
   max-width: 1200px;
   margin: auto;
-  display: grid;
-  gap: 2rem;
 }
 
-footer strong {
-  color: white;
-}
+footer a { color: #ff9f1c; }
 
-/* ---------- RESPONSIVE ---------- */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
+  .hero-inner { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -228,7 +228,7 @@ footer strong {
 
 <header>
   <div class="nav">
-    <img src="assets/logo.png" alt="Keystone Backflow Services Logo">
+    <img src="assets/logo.png" alt="Keystone Backflow Services">
     <a href="tel:8137611314">CALL 813-761-1314</a>
   </div>
 </header>
@@ -236,23 +236,34 @@ footer strong {
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <h1>Protecting Water Systems <span>Without Compromise</span></h1>
+      <h1>Backflow Failure Is <span>Not an Option</span></h1>
+
       <p>
-        Keystone Backflow Services delivers certified backflow testing,
-        inspections, repairs, and compliance support across
-        <strong>West Central Florida</strong>.
-        Precision. Accountability. Zero shortcuts.
+        If your backflow preventer fails, <strong>you are liable</strong>.
+        Keystone Backflow Services delivers certified testing, repairs,
+        and compliance enforcement across <strong>West Central Florida</strong>.
       </p>
 
+      <p><strong>We don’t guess. We don’t cut corners. We don’t miss deadlines.</strong></p>
+
       <div class="cta">
-        <a class="primary" href="tel:8137611314">Schedule Service</a>
-        <a class="secondary" href="#services">Our Services</a>
+        <a class="primary" href="tel:8137611314">CALL NOW — 813-761-1314</a>
+        <a class="secondary" href="#services">VIEW SERVICES</a>
       </div>
     </div>
 
     <div class="hero-graphic">
-      <img src="assets/logo.png" alt="Keystone Gauge Graphic">
+      <img src="assets/logo.png" alt="Backflow Authority Graphic">
     </div>
+  </div>
+</section>
+
+<section class="authority">
+  <div class="authority-inner">
+    <div>✔ STATE CERTIFIED</div>
+    <div>✔ CODE COMPLIANT</div>
+    <div>✔ FAST REPORTING</div>
+    <div>✔ ZERO EXCUSES</div>
   </div>
 </section>
 
@@ -262,44 +273,49 @@ footer strong {
 
     <div class="cards">
       <div class="card">
-        <h3>Backflow Testing</h3>
-        <p>
-          Certified testing that meets all local and state requirements.
-          Fast reporting. Zero guesswork.
-        </p>
+        <h3>Certified Backflow Testing</h3>
+        <p>Legally required. Properly documented. Submitted right the first time.</p>
       </div>
 
       <div class="card">
-        <h3>Repairs & Rebuilds</h3>
-        <p>
-          From minor fixes to full rebuilds, we restore protection
-          without unnecessary replacements.
-        </p>
+        <h3>Device Repairs & Rebuilds</h3>
+        <p>Failed test? We fix the problem — not the paperwork.</p>
       </div>
 
       <div class="card">
-        <h3>Annual Compliance</h3>
-        <p>
-          We handle reminders, documentation, and submissions so you
-          stay compliant year after year.
-        </p>
+        <h3>Annual Compliance Management</h3>
+        <p>Missed deadlines lead to fines and shutoffs. We prevent both.</p>
       </div>
 
       <div class="card">
         <h3>Commercial & Residential</h3>
-        <p>
-          HOAs, restaurants, medical facilities, industrial sites,
-          and private residences.
-        </p>
+        <p>Restaurants. Medical. Industrial. HOAs. Failure isn’t tolerated here.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section class="warning">
+  <div class="section-inner">
+    <h2 class="section-title" style="color:#b45309;">
+      Ignore Backflow Testing And This Happens
+    </h2>
+
+    <ul>
+      <li>❌ Failed inspections</li>
+      <li>❌ Fines and enforcement action</li>
+      <li>❌ Water service interruption</li>
+      <li>❌ Liability exposure</li>
+    </ul>
+
+    <p><strong>We exist to make sure you never deal with any of this.</strong></p>
+  </div>
+</section>
+
 <section class="stripe">
-  <h2>West Central Florida’s Trusted Backflow Authority</h2>
-  <p>When water safety matters, excuses aren’t an option.</p>
-  <a href="tel:8137611314">Call 813-761-1314</a>
+  <h2>West Central Florida’s Backflow Authority</h2>
+  <p>No shortcuts. No excuses. No failures.</p>
+  <a href="tel:8137611314">CALL 813-761-1314</a>
 </section>
 
 <footer>
@@ -307,7 +323,8 @@ footer strong {
     <p>
       <strong>Keystone Backflow Services</strong><br>
       Serving West Central Florida<br>
-      Phone: <a href="tel:8137611314" style="color:#ff9f1c;">813-761-1314</a>
+      Immediate Service Available<br>
+      <a href="tel:8137611314">813-761-1314</a>
     </p>
 
     <p style="font-size:0.9rem;">
