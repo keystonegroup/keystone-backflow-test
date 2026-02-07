@@ -12,8 +12,6 @@
   --red: #dc2626;
   --orange: #fb923c;
   --dark: #0b0b0b;
-  --light: #ffffff;
-  --gray: #6b7280;
   --bg: #f4f6f8;
 }
 
@@ -29,9 +27,9 @@ body {
   color: #111;
 }
 
-/* ===== HEADER (DARK BAND) ===== */
+/* ===== HEADER ===== */
 header {
-  background: #0b0b0b;
+  background: var(--dark);
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, var(--red), var(--orange));
   border-image-slice: 1;
@@ -51,25 +49,15 @@ header {
 
 .logo img {
   height: 48px;
-  width: auto;
-  display: block;
 }
 
-/* CTA still dominates */
 .call-btn {
   background: linear-gradient(135deg, var(--red), var(--orange));
   color: #fff;
   padding: 0.85rem 2rem;
   font-weight: 900;
-  letter-spacing: 1px;
   text-transform: uppercase;
   clip-path: polygon(6% 0,100% 0,94% 100%,0 100%);
-  box-shadow: 0 14px 35px rgba(220,38,38,0.45);
-  transition: transform 0.2s ease;
-}
-
-.call-btn:hover {
-  transform: translateY(-3px);
 }
 
 /* ===== HERO ===== */
@@ -99,14 +87,10 @@ header {
   font-size: clamp(3.2rem, 6vw, 4.8rem);
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 1;
-  color: #111;
 }
 
 .hero h1 span {
-  display: block;
   color: #fff;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .hero p {
@@ -114,7 +98,6 @@ header {
   max-width: 620px;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111;
 }
 
 .hero-cta {
@@ -126,17 +109,22 @@ header {
   color: #fff;
   padding: 1.3rem 3.2rem;
   font-weight: 900;
-  letter-spacing: 1px;
   text-transform: uppercase;
-  display: inline-block;
-  box-shadow: 0 25px 55px rgba(0,0,0,0.45);
+}
+
+/* ===== SECTION DIVIDER (DIAGONAL) ===== */
+.divider {
+  height: 80px;
+  background: var(--dark);
+  clip-path: polygon(0 0,100% 0,100% 70%,0 100%);
 }
 
 /* ===== TRUST ===== */
 .trust {
-  background: #111;
+  background: var(--dark);
   color: #fff;
-  padding: 3.2rem 2rem;
+  padding: 3.5rem 2rem;
+  border-top: 4px solid var(--red);
 }
 
 .trust-grid {
@@ -154,12 +142,16 @@ header {
   text-transform: uppercase;
 }
 
-.trust p {
-  font-weight: 600;
+/* ===== LIGHT DIVIDER ===== */
+.divider-light {
+  height: 70px;
+  background: var(--bg);
+  clip-path: polygon(0 30%,100% 0,100% 100%,0 100%);
 }
 
 /* ===== SERVICES ===== */
 .services {
+  background: var(--bg);
   padding: 6.5rem 2rem;
 }
 
@@ -188,22 +180,11 @@ header {
   padding: 2.6rem;
   border-top: 6px solid var(--red);
   box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-  transition: transform 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
 }
 
 .card h3 {
   font-size: 1.6rem;
   font-weight: 900;
-  margin-bottom: 0.8rem;
-}
-
-.card p {
-  font-weight: 600;
-  color: #4b5563;
 }
 
 /* ===== CTA ===== */
@@ -212,6 +193,7 @@ header {
   color: #fff;
   padding: 5.5rem 2rem;
   text-align: center;
+  border-top: 5px solid var(--orange);
 }
 
 .cta h2 {
@@ -230,7 +212,6 @@ header {
   background: linear-gradient(135deg, var(--red), var(--orange));
   padding: 1.3rem 3.4rem;
   font-weight: 900;
-  letter-spacing: 1px;
   text-transform: uppercase;
   clip-path: polygon(6% 0,100% 0,94% 100%,0 100%);
 }
@@ -244,21 +225,11 @@ footer {
   font-weight: 600;
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-  .logo img {
-    height: 42px;
-  }
-
   .hero h1,
   .hero p,
   .hero-cta {
     text-align: center;
-  }
-
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 </style>
@@ -278,61 +249,35 @@ footer {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <h1>
-      Pressure.<br>
-      <span>Handled.</span>
-    </h1>
-    <p>
-      Certified backflow testing and repair — no delays, no compliance headaches.
-      Serving <strong>West Central Florida</strong>.
-    </p>
+    <h1>Pressure.<br><span>Handled.</span></h1>
+    <p>Certified backflow testing and repair — no delays, no compliance headaches. Serving West Central Florida.</p>
     <div class="hero-cta">
       <a href="tel:18137611314">Call Now</a>
     </div>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <section class="trust">
   <div class="trust-grid">
-    <div>
-      <h3>Certified</h3>
-      <p>State & Local Compliant</p>
-    </div>
-    <div>
-      <h3>Fast Response</h3>
-      <p>No Waiting. No Delays.</p>
-    </div>
-    <div>
-      <h3>Local</h3>
-      <p>West Central Florida</p>
-    </div>
-    <div>
-      <h3>Reliable</h3>
-      <p>Done Right the First Time</p>
-    </div>
+    <div><h3>Certified</h3><p>State & Local Compliant</p></div>
+    <div><h3>Fast</h3><p>No Waiting. No Delays.</p></div>
+    <div><h3>Local</h3><p>West Central Florida</p></div>
+    <div><h3>Reliable</h3><p>Done Right the First Time</p></div>
   </div>
 </section>
+
+<div class="divider-light"></div>
 
 <section class="services">
   <div class="services-inner">
     <h2>Services</h2>
     <div class="cards">
-      <div class="card">
-        <h3>Backflow Testing</h3>
-        <p>Certified annual testing to keep you compliant and protected.</p>
-      </div>
-      <div class="card">
-        <h3>Backflow Repair</h3>
-        <p>Rapid diagnostics and professional-grade repairs.</p>
-      </div>
-      <div class="card">
-        <h3>Installation</h3>
-        <p>New installs and replacements built to last.</p>
-      </div>
-      <div class="card">
-        <h3>Compliance Handling</h3>
-        <p>Reporting and paperwork handled for you.</p>
-      </div>
+      <div class="card"><h3>Backflow Testing</h3><p>Certified annual testing.</p></div>
+      <div class="card"><h3>Backflow Repair</h3><p>Professional-grade repairs.</p></div>
+      <div class="card"><h3>Installation</h3><p>New installs and replacements.</p></div>
+      <div class="card"><h3>Compliance Handling</h3><p>Paperwork handled for you.</p></div>
     </div>
   </div>
 </section>
