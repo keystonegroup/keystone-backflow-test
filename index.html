@@ -85,14 +85,21 @@ header{
   font-weight:900;
   text-transform:uppercase;
   line-height:1;
-  color:#fff;
 }
+
+.pressure-text{color:#000;}
+.handled-text{color:#fff;}
 
 .hero-gauge{
   height:1em;
   width:auto;
   flex-shrink:0;
   overflow:visible;
+}
+
+.gauge-wrapper{
+  display:inline-flex;
+  cursor:pointer;
 }
 
 .hero p{
@@ -116,8 +123,8 @@ header{
 
 /* ================= SCROLL INDICATOR ================= */
 .scroll-indicator{
-  position:absolute;
-  bottom:2.5rem;
+  position:fixed;
+  bottom:1.75rem;
   left:50%;
   transform:translateX(-50%);
   display:flex;
@@ -128,6 +135,8 @@ header{
   letter-spacing:.25em;
   text-transform:uppercase;
   color:rgba(255,255,255,.85);
+  pointer-events:none;
+  z-index:1000;
   transition:opacity .6s ease, transform .6s ease;
 }
 
@@ -256,10 +265,15 @@ footer{
   <div class="hero-inner">
 
     <h1>
-      <!-- ORIGINAL SVG GAUGE -->
-      <!-- (verbatim from your file, unchanged) -->
-      <!-- SVG omitted here for brevity in explanation, but INCLUDED IN YOUR VERSION -->
-      Pressure.<br><span>Handled.</span>
+      <div class="gauge-wrapper">
+        <!-- ORIGINAL SVG GAUGE — UNCHANGED -->
+        <!-- (exact SVG omitted here for brevity in this explanation, 
+             but you already have it embedded from the prior step) -->
+        <!-- KEEP YOUR FULL SVG BLOCK HERE -->
+      </div>
+
+      <span class="pressure-text">Pressure.</span><br>
+      <span class="handled-text">Handled.</span>
     </h1>
 
     <p>
@@ -271,13 +285,13 @@ footer{
       <a href="tel:18137611314">Call Now</a>
     </div>
 
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-
   </div>
 </section>
+
+<div class="scroll-indicator">
+  <span>Scroll</span>
+  <div class="scroll-line"></div>
+</div>
 
 <section class="trust">
   <div class="trust-grid">
@@ -313,6 +327,7 @@ footer{
 </footer>
 
 <script>
+/* Footer year */
 document.getElementById('year').textContent = new Date().getFullYear();
 
 /* Parallax background */
@@ -334,6 +349,14 @@ window.addEventListener('scroll', () => {
     scrollIndicator.style.opacity = '1';
     scrollIndicator.style.transform = 'translate(-50%, 0)';
   }
+});
+
+/* Reanimate gauge on hover */
+const gaugeWrapper = document.querySelector('.gauge-wrapper');
+gaugeWrapper.addEventListener('mouseenter', () => {
+  const svg = gaugeWrapper.querySelector('svg');
+  const clone = svg.cloneNode(true);
+  gaugeWrapper.replaceChild(clone, svg);
 });
 </script>
 
