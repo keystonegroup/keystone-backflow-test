@@ -78,11 +78,20 @@ header{
 }
 
 .hero h1{
+  display:flex;
+  align-items:center;
+  gap:1rem;
   font-size:clamp(3.4rem,6.5vw,5.2rem);
   font-weight:900;
   text-transform:uppercase;
   line-height:1;
   color:#fff;
+}
+
+.hero-gauge{
+  height:1.1em;
+  width:auto;
+  flex-shrink:0;
 }
 
 .hero p{
@@ -245,7 +254,25 @@ footer{
   <div class="hero-bg"></div>
   <div class="hero-inner">
 
-    <h1>Pressure.<br>Handled.</h1>
+    <h1>
+      <!-- Animated Gauge -->
+      <svg class="hero-gauge" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M10 110 A90 90 0 0 1 190 110" fill="none" stroke="#fff" stroke-width="8" opacity=".25"/>
+        <line x1="100" y1="110" x2="100" y2="30" stroke="var(--red)" stroke-width="4">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="-90 100 110"
+            to="15 100 110"
+            dur="1s"
+            begin="0.4s"
+            fill="freeze"/>
+        </line>
+        <circle cx="100" cy="110" r="6" fill="#111"/>
+      </svg>
+
+      Pressure.<br>Handled.
+    </h1>
 
     <p>
       Certified backflow testing, repair, and compliance — fast, reliable,
@@ -298,15 +325,12 @@ footer{
 </footer>
 
 <script>
-/* Footer year */
 document.getElementById('year').textContent = new Date().getFullYear();
 
 /* Scroll indicator fade */
 const scrollIndicator = document.querySelector('.scroll-indicator');
-
 window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if(y > 120){
+  if(window.scrollY > 120){
     scrollIndicator.style.opacity = '0';
     scrollIndicator.style.transform = 'translate(-50%, 10px)';
   } else {
@@ -315,9 +339,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* Parallax hero background (desktop only) */
+/* Parallax hero background */
 const heroBg = document.querySelector('.hero-bg');
-
 window.addEventListener('scroll', () => {
   if(window.innerWidth > 768){
     heroBg.style.transform =
