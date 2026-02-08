@@ -896,38 +896,39 @@ header {
   .footer-meta {
     text-align: center;
   }
+}
 
-  /* ================= MOBILE STICKY CTA ================= */
-  @media (max-width: 600px) {
+/* ================= MOBILE STICKY CTA ================= */
+@media (max-width: 600px) {
 
-    /* Hide header call button */
-    .call-btn {
-      display: none;
-    }
-
-    /* Sticky bottom CTA */
-    .mobile-sticky-cta {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1100;
-
-      background: var(--accent-gradient);
-      color: #fff;
-      text-align: center;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-
-      padding: 1.1rem 1.5rem;
-      text-decoration: none;
-
-      box-shadow: 0 -8px 24px rgba(0, 0, 0, .25);
-    }
-
-    /* Prevent content from being hidden behind CTA */
-    body {
-      padding-bottom: 72px;
-    }
+  /* Hide header call button */
+  .call-btn {
+    display: none;
   }
+
+  /* Sticky bottom CTA */
+  .mobile-sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+
+    background: var(--accent-gradient);
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+
+    padding: 1.1rem 1.5rem;
+    text-decoration: none;
+
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .25);
+  }
+
+  /* Prevent content from being hidden behind CTA */
+  body {
+    padding-bottom: 72px;
+  }
+}
