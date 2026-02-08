@@ -503,16 +503,16 @@ header {
   margin-bottom: 1.5rem;
 }
 
+/* ===== CHECKBOX BASE ===== */
 .checkbox-label {
   display: flex;
   align-items: flex-start;
-  gap: .75rem;
+  gap: .9rem;
   cursor: pointer;
-  font-size: .85rem;
+  font-size: .9rem;
   line-height: 1.5;
-  color: var(--gray-700);
+  color: #374151;
   font-weight: 600;
-  position: relative;
 }
 
 .checkbox-label input {
@@ -521,33 +521,55 @@ header {
   pointer-events: none;
 }
 
+/* ===== BOX ===== */
 .checkmark {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--gray-400);
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #9ca3af;
+  background: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-top: .15rem;
-  background: var(--white);
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .12s ease;
 }
 
+/* ===== HOVER ===== */
+.checkbox-label:hover .checkmark {
+  border-color: var(--orange);
+}
+
+/* ===== CHECKED ===== */
 .checkbox-label input:checked + .checkmark {
-  border-color: var(--red);
-  background: linear-gradient(135deg, var(--red), var(--orange));
+  background: var(--accent-gradient);
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+  transform: scale(1.05);
 }
 
+/* ===== CHECK ICON ===== */
 .checkbox-label input:checked + .checkmark::after {
   content: "";
-  width: 5px;
-  height: 9px;
+  width: 6px;
+  height: 11px;
   border: solid #fff;
-  border-width: 0 2px 2px 0;
+  border-width: 0 2.5px 2.5px 0;
   transform: rotate(45deg);
 }
 
-.checkbox-text a {
+/* ===== FOCUS (KEYBOARD) ===== */
+.checkbox-label input:focus-visible + .checkmark {
+  outline: 3px solid rgba(251, 146, 60, .5);
+  outline-offset: 2px;
+}
+
+/*.checkbox-text a {
   color: var(--red);
   font-weight: 800;
   text-decoration: none;
@@ -555,7 +577,7 @@ header {
 
 .checkbox-text a:hover {
   text-decoration: underline;
-}
+}*/
 
 /* =========================================================
    FORM STATES
