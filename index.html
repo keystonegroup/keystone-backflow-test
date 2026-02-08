@@ -318,9 +318,19 @@
       opacity: 1;
     }
 
+    /* ================= SERVICE ICON SVG ================= */
     .service-icon {
-      font-size: 2rem;
       margin-bottom: 1.25rem;
+    }
+
+    .service-icon .icon {
+      width: 36px;
+      height: 36px;
+      stroke: var(--red);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .service-card h3 {
@@ -551,11 +561,7 @@
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 2rem;
-    }
-
-    .footer-brand {
-      justify-self: end;
+      gap: 2.5rem;
     }
 
     @media (max-width: 700px) {
@@ -564,9 +570,14 @@
         text-align: center;
       }
 
+      .footer-meta,
       .footer-brand {
         justify-self: center;
       }
+    }
+
+    .footer-brand {
+      justify-self: end;
     }
 
     .footer-logo {
@@ -577,10 +588,15 @@
     }
 
     .footer-meta {
+      justify-self: start;
+      text-align: left;
+    }
+
+    /*.footer-meta {
       display: flex;
       flex-direction: column;
       gap: .75rem;
-    }
+    }*/
 
     .footer-copy {
       font-size: .85rem;
@@ -867,10 +883,6 @@
   <footer class="site-footer">
     <div class="footer-inner">
 
-      <div class="footer-brand">
-        <img src="gauge-logo.png" alt="Keystone Backflow Services logo" class="footer-logo">
-      </div>
-
       <div class="footer-meta">
         <p class="footer-copy">
           © <span id="year"></span> Keystone Backflow Services. All rights reserved.
@@ -881,6 +893,10 @@
           <span class="divider">|</span>
           <a href="/sms-terms.html">SMS Terms & Conditions</a>
         </nav>
+      </div>
+
+      <div class="footer-brand">
+        <img src="gauge-logo.png" alt="Keystone Backflow Services logo" class="footer-logo">
       </div>
 
     </div>
