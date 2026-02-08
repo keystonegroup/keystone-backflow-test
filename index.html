@@ -290,7 +290,7 @@ footer{
             type="rotate"
             from="-90 152.94 117.92"
             to="6 152.94 117.92"
-            begin="0.4s"
+            begin="0.5s"
             dur="1s"
             fill="freeze"
             calcMode="spline"
@@ -300,7 +300,7 @@ footer{
             type="rotate"
             from="6 152.94 117.92"
             to="0 152.94 117.92"
-            begin="1.4s"
+            begin="1.5s"
             dur="0.4s"
             fill="freeze"
             calcMode="spline"
@@ -390,22 +390,30 @@ window.addEventListener('scroll', () => {
 
 /* Scroll indicator fade */
 const scrollIndicator = document.querySelector('.scroll-indicator');
+let scrollHidden = false;
+
 window.addEventListener('scroll', () => {
-  if(window.scrollY > 120){
+  if (scrollHidden) return;
+
+  if (window.scrollY > 60) {   // disappear sooner
     scrollIndicator.style.opacity = '0';
     scrollIndicator.style.transform = 'translate(-50%, 10px)';
-  } else {
-    scrollIndicator.style.opacity = '1';
-    scrollIndicator.style.transform = 'translate(-50%, 0)';
+    scrollHidden = true;
   }
 });
 
 /* Reanimate gauge on hover */
 const gaugeWrapper = document.querySelector('.gauge-wrapper');
+let gaugeHoveredOnce = false;
+
 gaugeWrapper.addEventListener('mouseenter', () => {
+  if (gaugeHoveredOnce) return;
+
   const svg = gaugeWrapper.querySelector('svg');
   const clone = svg.cloneNode(true);
+
   gaugeWrapper.replaceChild(clone, svg);
+  gaugeHoveredOnce = true;
 });
 </script>
 
