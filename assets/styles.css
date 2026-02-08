@@ -519,6 +519,11 @@ header {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+
+  /* CRITICAL */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 /* ===== BOX ===== */
