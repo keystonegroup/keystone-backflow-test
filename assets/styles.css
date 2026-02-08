@@ -918,6 +918,11 @@ header {
   .footer-meta {
     text-align: center;
   }
+
+  .footer-legal {
+    display: none;
+  }
+
 }
 
 /* ================= MOBILE STICKY CTA ================= */
