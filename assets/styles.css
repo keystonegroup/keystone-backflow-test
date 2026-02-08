@@ -789,6 +789,28 @@ header {
 }
 
 @media (max-width: 600px) {
+  .hero h1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .hero h1 br {
+    display: none;
+  }
+
+  .pressure-text,
+  .handled-text {
+    display: block;
+    line-height: 1;
+  }
+
+  .gauge-wrapper {
+    margin-bottom: .25rem;
+  }
+}
+
+@media (max-width: 600px) {
   .trust {
     padding: 2.5rem 1.5rem;
   }
