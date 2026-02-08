@@ -60,32 +60,27 @@
       text-transform: uppercase;
       text-decoration: none;
       clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
-    }
-
-    .header-call-icon {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      background: linear-gradient(135deg, var(--red), var(--orange));
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
+      gap: .6rem;
     }
 
-    .header-call-icon svg {
-      width: 20px;
-      height: 20px;
+    .call-btn .phone-icon {
+      width: 18px;
+      height: 18px;
       fill: none;
       stroke: #fff;
       stroke-width: 2.2;
+      flex-shrink: 0;
     }
 
-    .header-call-icon:hover,
-    .header-call-icon:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, .45);
+    @media (min-width: 900px) {
+      .call-btn::after {
+        content: " Tap to call";
+        font-size: .65rem;
+        opacity: .75;
+        margin-left: .4rem;
+      }
     }
 
     /* ================= HERO ================= */
@@ -681,8 +676,8 @@
       <div class="logo">
         <img src="logo-wide.png" alt="Keystone Backflow Services">
       </div>
-      <a href="tel:18137611314" class="header-call-icon" aria-label="Call Keystone Backflow Services at 813-761-1314">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+      <a href="tel:18137611314" class="call-btn" aria-label="Call Keystone Backflow Services at 813-761-1314">
+        <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2
       19.79 19.79 0 0 1-8.63-3.07
       19.5 19.5 0 0 1-6-6
@@ -696,6 +691,7 @@
       12.84 12.84 0 0 0 2.81.7
       A2 2 0 0 1 22 16.92z" />
         </svg>
+        813-761-1314
       </a>
     </div>
   </header>
