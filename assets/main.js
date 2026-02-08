@@ -128,14 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       form.reset();
 
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.style.display = 'none';
+
       if (successBox) {
         successBox.textContent =
           'Thank you! Your message has been sent. We’ll be in touch shortly.';
         successBox.style.display = 'block';
-
-        setTimeout(() => {
-          successBox.style.display = 'none';
-        }, 6000);
       }
 
     } catch {
