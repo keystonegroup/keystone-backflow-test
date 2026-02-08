@@ -405,6 +405,7 @@ header {
 
 .cta a {
   background: var(--grad-main);
+  color: var(--white);
   padding: 1.3rem 3.5rem;
   font-weight: 900;
   text-transform: uppercase;
