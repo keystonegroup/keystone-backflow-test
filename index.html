@@ -157,24 +157,77 @@ header{
 
 /* ================= TRUST ================= */
 .trust{
-  background:#111;
+  background:linear-gradient(135deg,#0b0b0b,#111);
   color:#fff;
-  padding:3.5rem 2rem;
+  padding:3rem 2rem;
 }
 
-.trust-grid{
+.trust-inner{
   max-width:1300px;
   margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   gap:2rem;
-  text-align:center;
 }
 
-.trust h3{
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  text-align:left;
+  flex:1;
+}
+
+.trust-icon{
+  font-size:1.6rem;
   color:var(--orange);
+  flex-shrink:0;
+}
+
+.trust-item h3{
+  font-size:1rem;
   font-weight:900;
   text-transform:uppercase;
+  margin-bottom:.15rem;
+}
+
+.trust-item p{
+  font-size:.9rem;
+  color:#d1d5db;
+}
+
+.trust-divider{
+  width:1px;
+  height:36px;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    var(--orange),
+    transparent
+  );
+}
+
+@media (max-width: 900px){
+  .trust-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .trust-item{
+    justify-content:center;
+  }
+
+  .trust-divider{
+    width:60px;
+    height:1px;
+    background:linear-gradient(
+      to right,
+      transparent,
+      var(--orange),
+      transparent
+    );
+  }
 }
 
 /* ================= SERVICES ================= */
@@ -352,11 +405,46 @@ footer{
 </div>
 
 <section class="trust">
-  <div class="trust-grid">
-    <div><h3>Certified</h3><p>State & Local Compliant</p></div>
-    <div><h3>Fast</h3><p>No Delays</p></div>
-    <div><h3>Local</h3><p>West Central Florida</p></div>
-    <div><h3>Reliable</h3><p>Done Right</p></div>
+  <div class="trust-inner">
+
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      <div>
+        <h3>Certified</h3>
+        <p>State & Local Compliant</p>
+      </div>
+    </div>
+
+    <div class="trust-divider"></div>
+
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      <div>
+        <h3>Fast</h3>
+        <p>No Delays or Reschedules</p>
+      </div>
+    </div>
+
+    <div class="trust-divider"></div>
+
+    <div class="trust-item">
+      <div class="trust-icon">📍</div>
+      <div>
+        <h3>Local</h3>
+        <p>West Central Florida</p>
+      </div>
+    </div>
+
+    <div class="trust-divider"></div>
+
+    <div class="trust-item">
+      <div class="trust-icon">🛠</div>
+      <div>
+        <h3>Reliable</h3>
+        <p>Done Right the First Time</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
