@@ -38,7 +38,9 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
@@ -67,7 +69,9 @@ header {
   align-items: center;
 }
 
-.logo img { height: 46px; }
+.logo img {
+  height: 46px;
+}
 
 .call-btn {
   background: var(--grad-main);
@@ -131,8 +135,13 @@ header {
   line-height: 1;
 }
 
-.pressure-text { color: #000; }
-.handled-text { color: #fff; }
+.pressure-text {
+  color: #000;
+}
+
+.handled-text {
+  color: #fff;
+}
 
 .hero-gauge {
   height: 1em;
@@ -151,10 +160,12 @@ header {
   max-width: 640px;
   font-size: 1.3rem;
   font-weight: 500;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
 }
 
-.hero-cta { margin-top: 2.75rem; }
+.hero-cta {
+  margin-top: 2.75rem;
+}
 
 .hero-contact-btn {
   background: var(--gray-900);
@@ -216,7 +227,7 @@ header {
   font-size: .75rem;
   letter-spacing: .25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, .85);
   pointer-events: none;
   z-index: 1000;
   transition: opacity .6s ease, transform .6s ease;
@@ -225,7 +236,7 @@ header {
 .scroll-line {
   width: 1px;
   height: 38px;
-  background: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, .75);
 }
 
 /* =========================================================
@@ -284,7 +295,9 @@ header {
     text-align: center;
   }
 
-  .trust-item { justify-content: center; }
+  .trust-item {
+    justify-content: center;
+  }
 
   .trust-divider {
     width: 60px;
@@ -353,11 +366,9 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(220,38,38,.08),
-    rgba(251,146,60,.08)
-  );
+  background: linear-gradient(135deg,
+      rgba(220, 38, 38, .08),
+      rgba(251, 146, 60, .08));
   opacity: 0;
   transition: opacity .25s ease;
 }
@@ -367,7 +378,9 @@ header {
   box-shadow: var(--shadow-lg);
 }
 
-.service-card:hover::before { opacity: 1; }
+.service-card:hover::before {
+  opacity: 1;
+}
 
 .service-card h3 {
   font-size: 1.6rem;
@@ -458,7 +471,7 @@ header {
 .contact-form {
   background: #f9fafb;
   padding: 3rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, .1);
   border-left: 6px solid var(--red);
 }
 
@@ -551,7 +564,7 @@ header {
 }
 
 /* ===== CHECKED ===== */
-.checkbox-label input:checked + .checkmark {
+.checkbox-label input:checked+.checkmark {
   background: var(--accent-gradient);
   border-color: transparent;
   box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
@@ -559,7 +572,7 @@ header {
 }
 
 /* ===== CHECK ICON ===== */
-.checkbox-label input:checked + .checkmark::after {
+.checkbox-label input:checked+.checkmark::after {
   content: "";
   width: 6px;
   height: 11px;
@@ -570,7 +583,7 @@ header {
 }
 
 /* ===== FOCUS (KEYBOARD) ===== */
-.checkbox-label input:focus-visible + .checkmark {
+.checkbox-label input:focus-visible+.checkmark {
   outline: 3px solid rgba(251, 146, 60, .5);
   outline-offset: 2px;
 }
@@ -598,11 +611,9 @@ header {
   display: none;
   margin-bottom: 1.5rem;
   padding: 1rem 1.25rem;
-  background: linear-gradient(
-    135deg,
-    rgba(34,197,94,.15),
-    rgba(22,163,74,.15)
-  );
+  background: linear-gradient(135deg,
+      rgba(34, 197, 94, .15),
+      rgba(22, 163, 74, .15));
   border-left: 6px solid #16a34a;
   color: #065f46;
   font-weight: 800;
@@ -735,8 +746,136 @@ header {
    MEDIA QUERIES (REMAINDER)
 ========================================================= */
 @media (max-width: 600px) {
+  .nav {
+    padding: 1rem 1.25rem;
+  }
+
+  .call-btn {
+    padding: .65rem 1.25rem;
+    font-size: .85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 4.5rem 1.5rem 3.5rem;
+    min-height: unset;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+  }
+
+  .hero-cta-group {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .hero-contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-call-secondary {
+    align-self: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .trust {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .trust-item {
+    gap: .75rem;
+  }
+
+  .trust-item h3 {
+    font-size: .95rem;
+  }
+
+  .trust-item p {
+    font-size: .85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .service-card {
+    padding: 2.25rem 2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .cta p {
+    font-size: 1.15rem;
+  }
+
+  .cta a {
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .contact-form {
+    padding: 2.25rem 2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    /* prevents iOS zoom */
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 48px;
+    height: 48px;
   }
 }
 
