@@ -535,14 +535,16 @@ header {
 
 .checkbox-label input:checked + .checkmark {
   border-color: var(--red);
-  background: var(--grad-main);
+  background: linear-gradient(135deg, var(--red), var(--orange));
 }
 
 .checkbox-label input:checked + .checkmark::after {
   content: "";
-  width: 8px;
-  height: 8px;
-  background: var(--white);
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .checkbox-text a {
