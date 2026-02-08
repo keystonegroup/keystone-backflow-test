@@ -1166,31 +1166,24 @@
     });
 
     const backToTopBtn = document.querySelector('.back-to-top');
+    const contactSection = document.getElementById('contact');
 
-    function shouldShowBackToTop() {
-      return window.location.hash === '#contact';
-    }
-
-    function updateBackToTopVisibility() {
-      if (shouldShowBackToTop()) {
-        backToTopBtn.classList.add('is-visible');
-      } else {
-        backToTopBtn.classList.remove('is-visible');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            backToTopBtn.classList.add('is-visible');
+          } else {
+            backToTopBtn.classList.remove('is-visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3
       }
-    }
+    );
 
-    // Run on page load
-    updateBackToTopVisibility();
-
-    // Run when hash changes (clicking Contact Us)
-    window.addEventListener('hashchange', updateBackToTopVisibility);
-
-    // Optional: hide once user scrolls near top
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < 200) {
-        backToTopBtn.classList.remove('is-visible');
-      }
-    });
+    observer.observe(contactSection);
   </script>
 
 </body>
