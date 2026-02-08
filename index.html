@@ -352,6 +352,107 @@ header{
   clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
 }
 
+/* ================= CONTACT ================= */
+.contact{
+  background:#fff;
+  padding:7rem 2rem;
+}
+
+.contact-inner{
+  max-width:720px;
+  margin:auto;
+}
+
+.contact-header{
+  margin-bottom:3.5rem;
+}
+
+.contact-eyebrow{
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:.75rem;
+}
+
+.contact-header h2{
+  font-size:3rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.contact-header p{
+  margin-top:1.25rem;
+  font-size:1.2rem;
+  color:#4b5563;
+  font-weight:500;
+}
+
+.contact-form{
+  background:#f9fafb;
+  padding:3rem;
+  box-shadow:0 25px 50px rgba(0,0,0,.1);
+  border-left:6px solid var(--red);
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1.5rem;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+}
+
+.form-group label{
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  margin-bottom:.4rem;
+}
+
+.form-group input,
+.form-group textarea{
+  padding:.85rem .9rem;
+  font-size:1rem;
+  border:2px solid #e5e7eb;
+  background:#fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:var(--orange);
+}
+
+.form-error{
+  margin-bottom:1.25rem;
+  color:#dc2626;
+  font-weight:700;
+}
+
+.contact-btn{
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  color:#fff;
+  padding:1.2rem 3rem;
+  font-weight:900;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
+}
+
+@media (max-width: 600px){
+  .form-row{
+    grid-template-columns:1fr;
+  }
+}
+
 /* ================= FOOTER ================= */
 footer{
   background:#000;
@@ -565,6 +666,62 @@ footer{
   <a href="tel:18137611314">Call 813-761-1314</a>
 </section>
 
+<section class="contact">
+  <div class="contact-inner">
+
+    <div class="contact-header">
+      <span class="contact-eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p>
+        Need testing, repair, or compliance help?  
+        Send us a message and we’ll respond quickly.
+      </p>
+    </div>
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            inputmode="numeric"
+            placeholder="8137611314"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <div class="form-error" aria-live="polite"></div>
+
+      <button type="submit" class="contact-btn">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
+
 <footer>
   <div class="footer-bottom">
     © <span id="year"></span> Keystone Backflow Services
@@ -610,6 +767,46 @@ gaugeWrapper.addEventListener('mouseenter', () => {
 
   gaugeWrapper.replaceChild(clone, svg);
   gaugeHoveredOnce = true;
+});
+
+/* Contact form validation */
+const form = document.querySelector('.contact-form');
+const phoneInput = document.getElementById('phone');
+const emailInput = document.getElementById('email');
+const errorBox = document.querySelector('.form-error');
+
+/* Numbers only for phone */
+phoneInput.addEventListener('input', () => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, '');
+});
+
+/* Form validation */
+form.addEventListener('submit', (e) => {
+  errorBox.textContent = '';
+
+  const name = form.name.value.trim();
+  const phone = phoneInput.value.trim();
+  const email = emailInput.value.trim();
+
+  if (!name) {
+    e.preventDefault();
+    errorBox.textContent = 'Please enter your name.';
+    return;
+  }
+
+  if (!phone && !email) {
+    e.preventDefault();
+    errorBox.textContent =
+      'Please provide at least a phone number or an email address.';
+    return;
+  }
+
+  if (phone && phone.length < 10) {
+    e.preventDefault();
+    errorBox.textContent =
+      'Phone number must be at least 10 digits.';
+    return;
+  }
 });
 </script>
 
