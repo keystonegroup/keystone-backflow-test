@@ -230,40 +230,97 @@ header{
   }
 }
 
-/* ================= SERVICES ================= */
-.services{padding:6rem 2rem;}
+/* ================= SERVICES (REDESIGN) ================= */
+.services{
+  padding:7rem 2rem;
+  background:#fff;
+}
 
 .services-inner{
   max-width:1300px;
   margin:auto;
 }
 
-.services h2{
-  font-size:3rem;
+.services-header{
+  max-width:720px;
+  margin-bottom:4.5rem;
+}
+
+.services-eyebrow{
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:.75rem;
+}
+
+.services-header h2{
+  font-size:3.2rem;
   font-weight:900;
   text-transform:uppercase;
-  margin-bottom:3rem;
-  border-left:10px solid var(--red);
-  padding-left:1rem;
+  line-height:1.05;
 }
 
-.cards{
+.services-header p{
+  margin-top:1.25rem;
+  font-size:1.25rem;
+  color:#4b5563;
+  font-weight:500;
+}
+
+.services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2.5rem;
 }
 
-.card{
-  background:#fff;
-  padding:2.5rem;
-  border-top:6px solid var(--red);
-  box-shadow:0 25px 50px rgba(0,0,0,.12);
+.service-card{
+  position:relative;
+  background:#f9fafb;
+  padding:3rem 2.75rem;
+  border-left:6px solid var(--red);
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
-.card h3{
+.service-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(220,38,38,.08),
+    rgba(251,146,60,.08)
+  );
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.service-card:hover::before{
+  opacity:1;
+}
+
+.service-icon{
+  font-size:2rem;
+  margin-bottom:1.25rem;
+}
+
+.service-card h3{
   font-size:1.6rem;
   font-weight:900;
   margin-bottom:.75rem;
+}
+
+.service-card p{
+  font-size:1.05rem;
+  line-height:1.6;
+  color:#374151;
 }
 
 /* ================= CTA ================= */
@@ -450,12 +507,54 @@ footer{
 
 <section class="services">
   <div class="services-inner">
-    <h2>Services</h2>
-    <div class="cards">
-      <div class="card"><h3>Backflow Testing</h3><p>Annual certified testing.</p></div>
-      <div class="card"><h3>Backflow Repair</h3><p>Professional repair service.</p></div>
-      <div class="card"><h3>Installation</h3><p>New installs & replacements.</p></div>
-      <div class="card"><h3>Compliance</h3><p>Paperwork handled for you.</p></div>
+
+    <div class="services-header">
+      <span class="services-eyebrow">What We Do</span>
+      <h2>Backflow Services</h2>
+      <p>
+        End-to-end protection for your water system — testing, repair,
+        installation, and full regulatory compliance.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🧪</div>
+        <h3>Certified Testing</h3>
+        <p>
+          State-certified annual backflow testing performed accurately,
+          documented properly, and submitted on time.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛠</div>
+        <h3>Professional Repair</h3>
+        <p>
+          Fast, code-compliant repairs using approved parts to restore
+          protection without unnecessary delays.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔩</div>
+        <h3>Installation & Replacement</h3>
+        <p>
+          New installations and replacements sized, installed, and tested
+          correctly the first time.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Compliance Management</h3>
+        <p>
+          We handle all paperwork and submissions so you stay compliant
+          with local and state regulations.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
