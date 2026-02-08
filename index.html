@@ -60,7 +60,7 @@ header{
   overflow:hidden;
 
   /* Fill the user’s view */
-  min-height:560px;     /* minimum design height */
+  min-height:500px;     /* minimum design height */
   height:100svh;        /* fills visible viewport */
 
   display:flex;
@@ -88,8 +88,9 @@ header{
 
 .hero h1{
   display:flex;
-  gap:.75rem;
-  align-items:center;
+  flex-direction:column;   /* forces separate lines */
+  align-items:flex-start;
+  gap:.25rem;              /* space between lines */
   font-size:clamp(3.4rem,6.5vw,5.2rem);
   font-weight:900;
   text-transform:uppercase;
@@ -329,7 +330,7 @@ footer{
     </svg>
   </div>
 
-  <span class="pressure-text">Pressure.</span><br>
+  <span class="pressure-text">Pressure.</span>
   <span class="handled-text">Handled.</span>
 </h1>
 
