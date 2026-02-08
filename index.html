@@ -559,21 +559,10 @@
       max-width: 1300px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: auto 1px auto;
       align-items: center;
-      gap: 2.5rem;
-    }
-
-    @media (max-width: 700px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-meta,
-      .footer-brand {
-        justify-self: center;
-      }
+      gap: 1.5rem;
+      /* pulls text closer to logo */
     }
 
     .footer-brand {
@@ -587,16 +576,18 @@
       opacity: .9;
     }
 
-    .footer-meta {
-      justify-self: start;
-      text-align: left;
+    .footer-separator {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom,
+          transparent,
+          var(--orange),
+          transparent);
     }
 
-    /*.footer-meta {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }*/
+    .footer-meta {
+      text-align: right;
+    }
 
     .footer-copy {
       font-size: .85rem;
@@ -628,6 +619,28 @@
     .footer-links .divider {
       color: #4b5563;
       font-size: .75rem;
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        text-align: center;
+      }
+
+      .footer-separator {
+        width: 60px;
+        height: 1px;
+        margin: 0 auto;
+        background: linear-gradient(to right,
+            transparent,
+            var(--orange),
+            transparent);
+      }
+
+      .footer-meta {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -782,7 +795,11 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon">🛠</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L2 19l3 3 6.3-6.3a5 5 0 0 0 6.4-6.4z" />
+            </svg>
+          </div>
           <h3>Professional Repair</h3>
           <p>
             Fast, code-compliant repairs using approved parts to restore
@@ -791,7 +808,13 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon">🔩</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path d="M3 12h18" />
+              <path d="M12 3v18" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
           <h3>Installation & Replacement</h3>
           <p>
             New installations and replacements sized, installed, and tested
@@ -800,7 +823,13 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon">📄</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+              <path d="M15 2v5h5" />
+              <path d="M8 13h8M8 17h6" />
+            </svg>
+          </div>
           <h3>Compliance Management</h3>
           <p>
             We handle all paperwork and submissions so you stay compliant
@@ -894,6 +923,8 @@
           <a href="/sms-terms.html">SMS Terms & Conditions</a>
         </nav>
       </div>
+
+      <div class="footer-separator" aria-hidden="true"></div>
 
       <div class="footer-brand">
         <img src="gauge-logo.png" alt="Keystone Backflow Services logo" class="footer-logo">
