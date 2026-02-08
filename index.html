@@ -967,7 +967,7 @@
         <div class="form-row">
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" inputmode="numeric" placeholder="(813) 761-1314">
+            <input type="tel" id="phone" name="phone" inputmode="tel" placeholder="(813) 761-1314">
           </div>
 
           <div class="form-group">
@@ -1039,23 +1039,13 @@
     /* Footer year */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* Parallax background */
-    const heroBg = document.querySelector('.hero-bg');
     window.addEventListener('scroll', () => {
       if (window.innerWidth > 768) {
         heroBg.style.transform =
           `skewY(-6deg) translateY(${window.scrollY * 0.25}px)`;
       }
-    });
 
-    /* Scroll indicator fade */
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    let scrollHidden = false;
-
-    window.addEventListener('scroll', () => {
-      if (scrollHidden) return;
-
-      if (window.scrollY > 60) {   // disappear sooner
+      if (!scrollHidden && window.scrollY > 60) {
         scrollIndicator.style.opacity = '0';
         scrollIndicator.style.transform = 'translate(-50%, 10px)';
         scrollHidden = true;
